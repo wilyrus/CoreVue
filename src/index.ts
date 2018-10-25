@@ -9,10 +9,11 @@ Vue.use(VueRouter);
 
 export default new Vue({
   el: '#vue-app',
-  template: `
+  template: `<div>
   <CardContainer/>
   <ServicesContainer/>
   <SocialContainer/>
+  </div>
   `,
   store: ApplicationStore,
   computed: {

@@ -2,9 +2,14 @@
 <div class="dashboard">
   <div class="dashboard-title">{{ title }}</div>
   <div class="dashboard-cards">
-    <div v-for="item in cards" :key="item.name">
+    <transition-group appear
+      v-on:before-enter="beforeEnter"
+      v-on:enter="enter"    
+     tag="ul" class="content__list" name="company">
+    <div class="company" v-for="item in cards" :key="item.name">
       <card-item v-bind:card="item"></card-item>
     </div>
+    </transition-group>
   </div>
     </div>
 </template>
@@ -13,6 +18,9 @@
 import Vue from 'vue';
 import CardItem from './CardItem.vue';
 import CardsState from './CardStore';
+import { TweenLite } from 'gsap';
+
+let inc = 0;
 
 export default Vue.extend({
   computed: {
@@ -25,6 +33,22 @@ export default Vue.extend({
   },
   components: {
     CardItem
+  },
+  methods: {
+    beforeEnter(el: HTMLElement) {
+      el.style.opacity = '0';
+      el.style.left = '50%'
+    },
+    enter(el: HTMLElement, done: Function) {
+      const delay = ++inc * 100
+      setTimeout(() => {
+        TweenLite.to(el, 0.5, {
+          opacity: 1,
+          left: 0,
+          onComplete: done
+        })
+      }, delay)
+    }
   }
 });
 </script>
@@ -38,8 +62,12 @@ export default Vue.extend({
 .dashboard-title {
   font-size: 4em;
 }
-.dashboard-cards {
+.content__list {
   display: flex;
    flex-wrap: wrap;
+}
+
+.company {
+  position: relative;
 }
 </style>
