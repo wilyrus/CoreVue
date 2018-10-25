@@ -1,6 +1,8 @@
 const path = require('path');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -11,6 +13,31 @@ module.exports = {
   },
 
   devtool: 'source-map',
+
+  optimization: {
+    noEmitOnErrors: true,
+    concatenateModules: true,
+    minimizer: [
+        new UglifyJSPlugin({
+            uglifyOptions: {
+                compress: {
+                    warnings: false
+                }
+            },
+            sourceMap: true,
+            parallel: true,
+            cache: true
+        }),
+        new OptimizeCssAssetsPlugin({
+            cssProcessorOptions: {
+                discardComments: {
+                    removeAll: true
+                },
+                safe: true
+            }
+        })
+    ]
+},
 
   module: {
     rules: [
@@ -54,7 +81,18 @@ module.exports = {
   },
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
-    compress: true,
+    stats: {
+      colors: true,
+      chunks: false,
+      source: false,
+      hash: false,
+      modules: false,
+      errorDetails: true,
+      version: false,
+      assets: false,
+      chunkModules: false,
+      children: false
+  },
     port: 8080
   }
 };
