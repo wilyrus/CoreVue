@@ -40,9 +40,9 @@ export default Vue.extend({
       el.style.left = '50%'
     },
     enter(el: HTMLElement, done: Function) {
-      const delay = ++inc * 100
+      const delay = inc++ * 100
       setTimeout(() => {
-        TweenLite.to(el, 0.5, {
+        TweenLite.to(el, 0.3, {
           opacity: 1,
           left: 0,
           onComplete: done
@@ -58,6 +58,7 @@ export default Vue.extend({
   display: flex;
   margin: 15px;
   flex-direction: column;
+  overflow: hidden;
 }
 .dashboard-title {
   font-size: 4em;
