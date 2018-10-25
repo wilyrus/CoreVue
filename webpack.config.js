@@ -3,6 +3,7 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+  mode: 'development',
   entry: './src/index.ts',
   output: {
     filename: 'bundle.js',
@@ -48,7 +49,7 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.js', '.vue', '.json'],
     alias: {
-      vue$: 'vue/dist/vue.esm.js'
+      vue: 'vue/dist/vue.js'
     }
   },
   devServer: {
