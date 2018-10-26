@@ -1,7 +1,10 @@
 <template>
-  <v-app id="inspire">
       <div class="form-container">
           <div class="login-container">
+          <picture class="login-container">
+ <source srcset="../../resources/logo.png">
+ <img src="../../resources/logo.png">
+</picture>
           <span class="login-title">Авторизация</span>
           <div class="form-group">
     <v-form v-model="valid" class="login-from">
@@ -23,7 +26,6 @@
     </div>
     </div>
     </div>
-  </v-app>
 </template>
 
 <script lang="ts">
@@ -68,6 +70,7 @@ export default Vue.extend({
     flex-direction: column;
     justify-content: center;
     padding: 10px;
+    height: 100%;
 }
 .form-group {
     background-color: #EFEFF4;
@@ -79,5 +82,12 @@ export default Vue.extend({
 .login-button {
     background-color: white;
     flex: 1;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    margin-top: -30px;
+    margin-bottom: 30px;
 }
 </style>

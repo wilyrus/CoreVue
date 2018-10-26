@@ -3,6 +3,7 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const GRAPHICS_LIMIT = 1000000;
 
 module.exports = {
   mode: 'development',
@@ -62,6 +63,13 @@ module.exports = {
       {
         test: /\.css$/,
         use: ['vue-style-loader', 'css-loader']
+      },
+      {
+          test: /\.(png|jpe?g|gif).*$/,
+          loader: 'url-loader',
+          options: {
+              limit: GRAPHICS_LIMIT
+          }
       },
 
       { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' }

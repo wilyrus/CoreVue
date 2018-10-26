@@ -23,14 +23,6 @@ const store: CardStore = {
     {
         name: 'Сообщения',
         subname: 'subname2'
-    },
-    {
-        name: 'Закупки',
-        subname: 'subname3'
-    },
-    {
-        name: 'Чаты',
-        subname: 'subname3'
     }]
  }
   };

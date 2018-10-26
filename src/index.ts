@@ -3,6 +3,7 @@ import ApplicationRouter from './ApplicationRouter';
 import ApplicationStore from './ApplicationStore';
 import Vuetify from 'vuetify';
 import 'vuetify/dist/vuetify.min.css';
+import './resources/main.css';
 
 Vue.use(Vuetify);
 
