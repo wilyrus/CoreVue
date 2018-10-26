@@ -1,35 +1,29 @@
-type CardState = {
+type ServiceState = {
     name: string,
-    subname: string,
-    description: string
+    subname?: string,
+    description?: string
 }
 
-export interface CardsState {
+export interface ServicesState {
     title: string,
-    cards: Array<CardState>
+    services: Array<ServiceState>
 }
 
-type CardStore = {
-    state: CardsState
+type ServiceStore = {
+    state: ServicesState
 }
 
-const store: CardStore = {
+const store: ServiceStore = {
     state: {
         title: 'Dashboard',
-        cards: [{
-        name: 'name1',
-        subname: 'subname1',
-        description: 'description1',
+        services: [{
+        name: 'Документооборот'
     },
     {
-        name: 'name2',
-        subname: 'subname2',
-        description: 'description2',
+        name: 'Командировки',
     },
     {
-        name: 'name3',
-        subname: 'subname3',
-        description: 'description3',
+        name: 'name3'
     }]
  }
   };

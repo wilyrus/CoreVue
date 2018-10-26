@@ -5,7 +5,7 @@
     <transition-group appear
       v-on:before-enter="beforeEnter"
       v-on:enter="enter"    
-     tag="ul" class="content__list" name="company">
+     tag="div" class="content__list" name="company">
     <div class="company" v-for="item in cards" :key="item.name">
       <card-item v-bind:card="item"></card-item>
     </div>
@@ -40,9 +40,9 @@ export default Vue.extend({
       el.style.left = '50%'
     },
     enter(el: HTMLElement, done: Function) {
-      const delay = inc++ * 100
+      const delay = inc++ * 50
       setTimeout(() => {
-        TweenLite.to(el, 0.3, {
+        TweenLite.to(el, 0.25, {
           opacity: 1,
           left: 0,
           onComplete: done
@@ -61,7 +61,7 @@ export default Vue.extend({
   overflow: hidden;
 }
 .dashboard-title {
-  font-size: 4em;
+  font-size: 2.5em;
 }
 .content__list {
   display: flex;

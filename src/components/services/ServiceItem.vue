@@ -1,5 +1,5 @@
 <template>
-    <div class="card-container">
+    <div class="service-container">
     <span class="card-title">{{card.name}}</span>
     <span>{{card.description}}</span>
     </div>
@@ -15,15 +15,14 @@ export default Vue.extend({
 
 <style>
 @media (min-width: 1000px) {
-  .card-container {
-  min-width: 15em;
-  height: 15em;
+  .service-container {
+  flex: 1;
 }
  }
    .card-title {
     padding: 5px;
   }
-.card-container {
+.service-container {
   background-color: white;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   display: flex;

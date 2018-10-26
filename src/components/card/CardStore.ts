@@ -1,7 +1,7 @@
 type CardState = {
     name: string,
     subname: string,
-    description: string
+    description?: string
 }
 
 export interface CardsState {
@@ -17,19 +17,20 @@ const store: CardStore = {
     state: {
         title: 'Dashboard',
         cards: [{
-        name: 'name1',
-        subname: 'subname1',
-        description: 'description1',
+        name: 'Задачи',
+        subname: 'subname1'
+        },
+    {
+        name: 'Сообщения',
+        subname: 'subname2'
     },
     {
-        name: 'name2',
-        subname: 'subname2',
-        description: 'description2',
+        name: 'Закупки',
+        subname: 'subname3'
     },
     {
-        name: 'name3',
-        subname: 'subname3',
-        description: 'description3',
+        name: 'Чаты',
+        subname: 'subname3'
     }]
  }
   };

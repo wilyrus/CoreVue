@@ -1,7 +1,7 @@
-import CardContainer from '../../components/card/CardContainer.vue';
+import HomeModule from '../../modules/home/HomeModule.vue';
 
 const homeRoutes = [
-    { path: '/home', component: CardContainer }
+    { path: '/home', component: HomeModule }
   ];
 
   export default homeRoutes;
