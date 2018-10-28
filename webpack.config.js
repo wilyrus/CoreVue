@@ -65,13 +65,64 @@ module.exports = {
         use: ['vue-style-loader', 'css-loader']
       },
       {
+          test: /\.svg(\?.*)?$/,
+          loader: 'raw-loader',
+      },
+      {
+          test: /\.svg(\?.*)?$/,
+          loader: 'url-loader',
+          options: {
+              prefix: 'fonts/',
+              name: '[path][name].[ext]',
+              limit: GRAPHICS_LIMIT,
+              mimetype: 'image/svg+xml'
+          }
+      },
+      {
+          test: /\.eot(\?.*)?$/,
+          loader: 'file-loader',
+          options: {
+              prefix: 'fonts/',
+              name: '[path][name].[ext]'
+          }
+      },
+      {
+          test: /\.ttf(\?.*)?$/,
+          loader: 'url-loader',
+          options: {
+              prefix: 'fonts/',
+              name: '[path][name].[ext]',
+              limit: GRAPHICS_LIMIT,
+              mimetype: 'application/octet-stream'
+          }
+      },
+      {
           test: /\.(png|jpe?g|gif).*$/,
           loader: 'url-loader',
           options: {
               limit: GRAPHICS_LIMIT
           }
       },
-
+      {
+          test: /\.woff(\?.*)?$/,
+          loader: 'url-loader',
+          options: {
+              prefix: 'fonts/',
+              name: '[path][name].[ext]',
+              limit: GRAPHICS_LIMIT,
+              mimetype: 'application/font-woff'
+          }
+      },
+      {
+          test: /\.woff2(\?.*)?$/,
+          loader: 'url-loader',
+          options: {
+              prefix: 'fonts/',
+              name: '[path][name].[ext]',
+              limit: GRAPHICS_LIMIT,
+              mimetype: 'application/font-woff2'
+          }
+      },
       { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' }
     ]
   },

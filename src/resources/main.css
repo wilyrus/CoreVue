@@ -15,3 +15,7 @@ body {
 body, input, select, textarea {
     font: normal 14px/1.4 OpenSans,Arial,sans-serif;
 }
+
+.content-container {
+    margin-top: 48px;
+}
