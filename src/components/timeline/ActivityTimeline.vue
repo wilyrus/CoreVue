@@ -30,6 +30,9 @@ import { TweenLite } from 'gsap';
 let inc = 0;
 
 export default Vue.extend({
+  data: () => ({
+    presentationDelay: 0
+  }),
   computed: {
     points(): any {
       return this.$store.state.TimelineStore.timelines
@@ -40,7 +43,7 @@ export default Vue.extend({
       el.style.opacity = '0';
     },
     enter(el: HTMLElement, done: Function) {
-      const delay = inc++ * 50;
+      const delay = this.presentationDelay++ * 50;
 
       el.style.top = `${-el.offsetTop}px`;
 

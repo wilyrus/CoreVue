@@ -22,6 +22,9 @@ import { TweenLite } from 'gsap';
 let inc = 0;
 
 export default Vue.extend({
+    data: () => ({
+    presentationDelay: 0
+  }),
   computed: {
     cards(): any {
       return this.$store.state.ServicesStore.services;
@@ -39,7 +42,8 @@ export default Vue.extend({
       el.style.left = '50%'
     },
     enter(el: HTMLElement, done: Function) {
-      const delay = inc++ * 50
+      const delay = this.presentationDelay++ * 50;
+      
       setTimeout(() => {
         TweenLite.to(el, 0.25, {
           opacity: 1,

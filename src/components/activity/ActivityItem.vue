@@ -1,6 +1,6 @@
 <template>
-    <div class="card-container">
-    <span class="card-title">{{card.name}}</span>
+    <div class="activity-card_container">
+    <span class="activity-card_title">{{card.name}}</span>
     <span>{{card.description}}</span>
     </div>
 </template>
@@ -15,15 +15,15 @@ export default Vue.extend({
 
 <style>
 @media (min-width: 1000px) {
-  .card-container {
+  .activity-card_container {
   min-width: 15em;
   height: 15em;
 }
  }
-   .card-title {
+   .activity-card_title {
     padding: 5px;
   }
-.card-container {
+.activity-card_container {
   background-color: white;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   display: flex;
