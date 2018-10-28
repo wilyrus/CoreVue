@@ -1,7 +1,5 @@
 import Profile from '../../modules/Profile/Profile.vue';
 
-const timelineRoutes = [
-    { path: '/profile', component: Profile }
-  ];
+const timelineRoutes = [{ name: 'profile', path: '/profile', component: Profile }];
 
-  export default timelineRoutes;
+export default timelineRoutes;

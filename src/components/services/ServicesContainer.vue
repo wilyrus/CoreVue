@@ -23,56 +23,53 @@ let inc = 0;
 
 export default Vue.extend({
     data: () => ({
-    presentationDelay: 0
-  }),
-  computed: {
-    cards(): any {
-      return this.$store.state.ServicesStore.services;
+        presentationDelay: 0
+    }),
+    computed: {
+        cards(): any {
+            return this.$store.state.ServicesStore.services;
+        },
+        title(): string {
+            return this.$store.state.ServicesStore.title;
+        }
     },
-    title(): string {
-      return this.$store.state.ServicesStore.title
-    }
-  },
-  components: {
-    ServiceItem
-  },
-  methods: {
-    beforeEnter(el: HTMLElement) {
-      el.style.opacity = '0';
-      el.style.left = '50%'
+    components: {
+        ServiceItem
     },
-    enter(el: HTMLElement, done: Function) {
-      const delay = this.presentationDelay++ * 50;
-      
-      setTimeout(() => {
-        TweenLite.to(el, 0.25, {
-          opacity: 1,
-          left: 0,
-          onComplete: done
-        })
-      }, delay)
+    methods: {
+        beforeEnter(el: HTMLElement) {
+            el.style.opacity = '0';
+            el.style.left = '50%';
+        },
+        enter(el: HTMLElement, done: Function) {
+            const delay = this.presentationDelay++ * 50;
+
+            setTimeout(() => {
+                TweenLite.to(el, 0.25, {
+                    opacity: 1,
+                    left: 0,
+                    onComplete: done
+                });
+            }, delay);
+        }
     }
-  }
 });
 </script>
 
 <style>
 .dashboard {
-  display: flex;
-  margin: 15px;
-  flex-direction: column;
-  overflow: hidden;
-}
-.dashboard-title {
-  font-size: 2.5em;
+    display: flex;
+    margin: 15px;
+    flex-direction: column;
+    overflow: hidden;
 }
 .content__list {
-  display: flex;
-   flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .service-wrapper {
-  position: relative;
-  width: 100%;
+    position: relative;
+    width: 100%;
 }
 </style>

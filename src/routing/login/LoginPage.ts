@@ -1,7 +1,5 @@
 import LoginForm from '../../modules/login/LoginForm.vue';
 
-const loginRoutes = [
-    { path: '/login', component: LoginForm }
-  ];
+const loginRoutes = [{ name: 'login', path: '/login', component: LoginForm }, { name: 'default', path: '/', component: LoginForm }];
 
-  export default loginRoutes;
+export default loginRoutes;

@@ -1,28 +1,76 @@
 <template>
-<div class="navigation-container">
-    <v-btn v-on:click="navigateBack" flat icon color="white"><v-icon large color="black">keyboard_arrow_left</v-icon></v-btn>
+<div class="navigation-container" v-if="show">
+    <v-btn :disabled=!showBackButton v-on:click="navigateBack" flat icon color="white"><v-icon v-show="showBackButton" large color="black">keyboard_arrow_left</v-icon></v-btn>
+    <span class="navigation-title">{{navigationTitle}}</span>
+    <v-btn flat icon color="white"><v-icon large color="black">search</v-icon></v-btn>
 </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
 
+type titles = {
+    [key: string]: string;
+};
+
+const routingTitles: titles = {
+    '': '',
+    login: 'Авторизация',
+    home: 'Домашний экран',
+    profile: 'Профиль',
+    timeline: 'График'
+};
+
 export default Vue.extend({
-  methods: {
-    navigateBack() {
-      this.$router.go(-1);
+    data() {
+        return {
+            show: false,
+            showBackButton: false,
+            navigationTitle: ''
+        };
+    },
+    methods: {
+        navigateBack() {
+            this.$router.go(-1);
+        },
+        updateNavigation() {
+            if (this.$route.name === 'login' || this.$route.name === 'default') {
+                this.show = false;
+            } else {
+                this.show = true;
+            }
+            if (this.$route.name === 'home') {
+                this.showBackButton = false;
+            } else {
+                this.showBackButton = true;
+            }
+            this.navigationTitle = routingTitles[this.$route.name || ''] || '';
+        }
+    },
+    created() {
+        this.updateNavigation();
+    },
+    watch: {
+        $route(to, from) {
+            this.updateNavigation();
+        }
     }
-  }
 });
 </script>
 
 <style>
 .navigation-container {
-      top: 0;
-          z-index: 10;
-  position: fixed;
-  width: 100%;
+    top: 0;
+    z-index: 10;
+    position: fixed;
+    width: 100%;
     background-color: white;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navigation-title {
+    font-size: 2em;
 }
 </style>

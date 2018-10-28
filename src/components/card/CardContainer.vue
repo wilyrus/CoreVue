@@ -21,55 +21,55 @@ import CardsState from './CardStore';
 import { TweenLite } from 'gsap';
 
 export default Vue.extend({
-  data: () => ({
-    presentationDelay: 0
-  }),
-  computed: {
-    cards(): any {
-      return this.$store.state.CardStore.cards;
+    data: () => ({
+        presentationDelay: 0
+    }),
+    computed: {
+        cards(): any {
+            return this.$store.state.CardStore.cards;
+        },
+        title(): string {
+            return this.$store.state.CardStore.title;
+        }
     },
-    title(): string {
-      return this.$store.state.CardStore.title
-    }
-  },
-  components: {
-    CardItem
-  },
-  methods: {
-    beforeEnter(el: HTMLElement) {
-      el.style.opacity = '0';
-      el.style.left = '50%';
+    components: {
+        CardItem
     },
-    enter(el: HTMLElement, done: Function) {
-      const delay = this.presentationDelay++ * 50
-      setTimeout(() => {
-        TweenLite.to(el, 0.25, {
-          opacity: 1,
-          left: 0,
-          onComplete: done
-        })
-      }, delay)
+    methods: {
+        beforeEnter(el: HTMLElement) {
+            el.style.opacity = '0';
+            el.style.left = '50%';
+        },
+        enter(el: HTMLElement, done: Function) {
+            const delay = this.presentationDelay++ * 50;
+            setTimeout(() => {
+                TweenLite.to(el, 0.25, {
+                    opacity: 1,
+                    left: 0,
+                    onComplete: done
+                });
+            }, delay);
+        }
     }
-  }
 });
 </script>
 
 <style>
 .dashboard {
-  display: flex;
-  margin: 15px;
-  flex-direction: column;
-  overflow: hidden;
+    display: flex;
+    margin: 15px;
+    flex-direction: column;
+    overflow: hidden;
 }
 .dashboard-title {
-  font-size: 2.5em;
+    font-size: 1.5em;
 }
 .content__list {
-  display: flex;
-   flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .company {
-  position: relative;
+    position: relative;
 }
 </style>

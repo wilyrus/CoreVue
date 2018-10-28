@@ -32,24 +32,18 @@
 import Vue from 'vue';
 
 export default Vue.extend({
-  data: (): any => ({
-    valid: false,
-    name: '',
-    nameRules: [
-      (v:string) => !!v || 'Name is required',
-      (v:string) => v.length <= 10 || 'Name must be less than 10 characters'
-    ],
-    email: '',
-    emailRules: [
-      (v:string) => !!v || 'E-mail is required',
-      (v:string) => /.+@.+/.test(v) || 'E-mail must be valid'
-    ]
-  }),
-  methods: {
-      navigateToHome() {
-          this.$router.push('home')
-      }
-  }
+    data: (): any => ({
+        valid: false,
+        name: '',
+        nameRules: [(v: string) => !!v || 'Name is required', (v: string) => v.length <= 10 || 'Name must be less than 10 characters'],
+        email: '',
+        emailRules: [(v: string) => !!v || 'E-mail is required', (v: string) => /.+@.+/.test(v) || 'E-mail must be valid']
+    }),
+    methods: {
+        navigateToHome() {
+            this.$router.push('home');
+        }
+    }
 });
 </script>
 
@@ -64,16 +58,13 @@ export default Vue.extend({
     text-align: center;
 }
 .form-container {
-    flex: 1;
-    justify-items: center;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     padding: 10px;
     height: 100%;
 }
 .form-group {
-    background-color: #EFEFF4;
+    background-color: #efeff4;
     border-radius: 15px;
     padding: 10px;
     display: flex;

@@ -1,7 +1,5 @@
 import HomeModule from '../../modules/home/HomeModule.vue';
 
-const homeRoutes = [
-    { path: '/home', component: HomeModule }
-  ];
+const homeRoutes = [{ name: 'home', path: '/home', component: HomeModule }];
 
-  export default homeRoutes;
+export default homeRoutes;
