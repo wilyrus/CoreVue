@@ -1,6 +1,5 @@
 <template>
 <div class="dashboard">
-  <div class="dashboard-title">{{ title }}</div>
   <div class="dashboard-cards">
     <transition-group appear
       v-on:before-enter="beforeEnter"

@@ -23,7 +23,7 @@ const store: ServiceStore = {
         name: 'Командировки',
     },
     {
-        name: 'name3'
+        name: 'Закупки'
     }]
  }
   };

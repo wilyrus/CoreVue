@@ -2,7 +2,7 @@
 <div class="navigation-container" v-if="show">
     <v-btn :disabled=!showBackButton v-on:click="navigateBack" flat icon color="white"><v-icon v-show="showBackButton" large color="black">keyboard_arrow_left</v-icon></v-btn>
     <span class="navigation-title">{{navigationTitle}}</span>
-    <v-btn flat icon color="white"><v-icon large color="black">search</v-icon></v-btn>
+    <v-btn flat icon color="white"><v-icon medium color="black">search</v-icon></v-btn>
 </div>
 </template>
 

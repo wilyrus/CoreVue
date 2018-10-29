@@ -1,6 +1,5 @@
 <template>
 <div class="dashboard">
-  <div class="dashboard-title">{{ title }}</div>
   <div class="dashboard-cards">
     <transition-group appear
       v-on:before-enter="beforeEnter"
@@ -37,14 +36,12 @@ export default Vue.extend({
     },
     methods: {
         beforeEnter(el: HTMLElement) {
-            el.style.opacity = '0';
             el.style.left = '50%';
         },
         enter(el: HTMLElement, done: Function) {
             const delay = this.presentationDelay++ * 50;
             setTimeout(() => {
                 TweenLite.to(el, 0.25, {
-                    opacity: 1,
                     left: 0,
                     onComplete: done
                 });

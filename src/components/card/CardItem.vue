@@ -2,16 +2,12 @@
     <div class="card-container">
       <v-badge
         overlap
-        color="orange"
+        color="red"
       >
-      <v-icon
-          slot="badge"
-          dark
-          small
-        >done</v-icon>
+      <span slot="badge">6</span>
     </v-badge>
     <span class="card-title">{{card.name}}</span>
-    <span>{{card.description}}</span>
+    <span class="card-text">{{card.text}}</span>
     </div>
 </template>
 
@@ -40,9 +36,12 @@ export default Vue.extend({
     flex-direction: column;
     margin: 10px;
     flex-basis: 50%;
-    min-width: 10em;
+    width: 10.5em;
     height: 10em;
     border-radius: 10px;
     background-color: #efeff4;
+}
+.card-text {
+  padding: 10px
 }
 </style>

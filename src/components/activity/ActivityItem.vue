@@ -2,6 +2,46 @@
     <div class="activity-card_container">
     <span class="activity-card_title">{{card.name}}</span>
     <span>{{card.description}}</span>
+            <v-timeline
+             class="timeline-preview"
+          align-top
+          dense
+        >
+          <v-timeline-item
+           class="timeline-preview_item"
+            color="green"
+            small
+          >
+            <v-layout pt-3>
+            </v-layout>
+          </v-timeline-item>
+          <v-timeline-item
+           class="timeline-preview_item"
+            color="green"
+            small
+          >
+            <v-layout wrap pt-3>
+            </v-layout>
+          </v-timeline-item>
+  
+          <v-timeline-item
+           class="timeline-preview_item"
+            color="green"
+            small
+          >
+            <v-layout pt-3>
+            </v-layout>
+          </v-timeline-item>
+  
+          <v-timeline-item
+           class="timeline-preview_item"
+            color="green"
+            small
+          >
+            <v-layout pt-3>
+            </v-layout>
+          </v-timeline-item>
+        </v-timeline>
     </div>
 </template>
 
@@ -34,5 +74,12 @@ export default Vue.extend({
   height: 10em;
   border-radius: 10px;
   background-color: #EFEFF4;
+}
+.timeline-preview {
+  transform: rotate(90deg);
+    top: 80px;
+}
+.timeline-preview_item {
+  height: 80px;
 }
 </style>
