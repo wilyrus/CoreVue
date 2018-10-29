@@ -8,22 +8,22 @@ import './resources/main.css';
 import 'material-design-icons-iconfont/dist/material-design-icons.css';
 
 Vue.use(Vuetify, {
-  iconfont: 'mdi'
+    iconfont: 'mdi'
 });
 
 export default new Vue({
-  el: '#vue-app',
-  template: `
-  <div>
+    el: '#vue-app',
+    template: `
+  <div class="body-container">
   <NavigationToolbar/>
   <div class="content-container">
   <router-view></router-view>
 </div>
 </div>
   `,
-  store: ApplicationStore,
-  router: ApplicationRouter,
-  components: {
-    NavigationToolbar
-  }
+    store: ApplicationStore,
+    router: ApplicationRouter,
+    components: {
+        NavigationToolbar
+    }
 });

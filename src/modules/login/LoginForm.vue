@@ -1,7 +1,7 @@
 <template>
       <div class="form-container">
           <div class="login-container">
-          <picture class="login-container">
+          <picture class="picture-container">
  <source srcset="../../resources/logo.png">
  <img src="../../resources/logo.png">
 </picture>
@@ -49,8 +49,12 @@ export default Vue.extend({
 
 <style>
 .login-container {
-    display: flex;
     flex-direction: column;
+    display: flex;
+    justify-content: center;
+    margin-top: -30px;
+    margin-bottom: 30px;
+    flex: 1;
 }
 .login-title {
     font-size: 2.5em;
@@ -73,12 +77,5 @@ export default Vue.extend({
 .login-button {
     background-color: white;
     flex: 1;
-}
-
-.login-container {
-    display: flex;
-    justify-content: center;
-    margin-top: -30px;
-    margin-bottom: 30px;
 }
 </style>
