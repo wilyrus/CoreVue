@@ -31,7 +31,7 @@ let inc = 0;
 
 export default Vue.extend({
     data: () => ({
-        presentationDelay: 0
+        presentationDelay: 4
     }),
     computed: {
         points(): any {

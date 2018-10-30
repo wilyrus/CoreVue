@@ -12,12 +12,19 @@ Vue.use(Vuetify, {
 });
 
 export default new Vue({
+    data() {
+        return {
+            transitionName: 'slide-right'
+        };
+    },
     el: '#vue-app',
     template: `
   <div class="body-container">
   <NavigationToolbar/>
   <div class="content-container">
+  <transition name="slide-fade">
   <router-view></router-view>
+  </transition>
 </div>
 </div>
   `,
