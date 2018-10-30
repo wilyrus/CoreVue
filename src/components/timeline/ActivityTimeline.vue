@@ -30,37 +30,37 @@ import { TweenLite } from 'gsap';
 let inc = 0;
 
 export default Vue.extend({
-  data: () => ({
-    presentationDelay: 0
-  }),
-  computed: {
-    points(): any {
-      return this.$store.state.TimelineStore.timelines
-    }
-  },
-  methods: {
-    beforeEnter(el: HTMLElement) {
-      el.style.opacity = '0';
+    data: () => ({
+        presentationDelay: 0
+    }),
+    computed: {
+        points(): any {
+            return this.$store.state.TimelineStore.timelines;
+        }
     },
-    enter(el: HTMLElement, done: Function) {
-      const delay = this.presentationDelay++ * 50;
+    methods: {
+        beforeEnter(el: HTMLElement) {
+            el.style.opacity = '0';
+        },
+        enter(el: HTMLElement, done: Function) {
+            const delay = this.presentationDelay++ * 50;
 
-      el.style.top = `${-el.offsetTop}px`;
+            el.style.top = `${-el.offsetTop}px`;
 
-      setTimeout(() => {
-        TweenLite.to(el, 0.3, {
-          opacity: 1,
-          top: 0,
-          onComplete: done
-        })
-      }, delay)
+            setTimeout(() => {
+                TweenLite.to(el, 0.3, {
+                    opacity: 1,
+                    top: 0,
+                    onComplete: done
+                });
+            }, delay);
+        }
     }
-  }
 });
 </script>
 
 <style>
 .pointTransition {
-  position: relative;
+    position: relative;
 }
 </style>

@@ -19,6 +19,6 @@ const store = new Vuex.Store({
         TimelineStore,
         ProfileStore
     }
-  })
+});
 
 export default store;

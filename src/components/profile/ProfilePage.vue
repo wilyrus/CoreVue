@@ -37,30 +37,30 @@
 import Vue from 'vue';
 
 export default Vue.extend({
-  data() {
-    return {
-      name: 'Роберт',
-      sername: 'Паттисон',
-      fathersName: 'Михайлович',
-      email: 'pattison@gmail.com'
+    data() {
+        return {
+            name: 'Роберт',
+            sername: 'Паттисон',
+            fathersName: 'Михайлович',
+            email: 'pattison@gmail.com'
+        };
+    },
+    computed: {
+        profileCard(): any {
+            return this.$store.state.ProfileStore;
+        }
     }
-  },
-  computed: {
-    profileCard(): any {
-      return this.$store.state.ProfileStore;
-    }
-  }
 });
 </script>
 
 <style>
 .profile-page {
-  display: flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
 }
 .profile-form {
-  width: 100%;
-  padding: 10px;
+    width: 100%;
+    padding: 10px;
 }
 </style>

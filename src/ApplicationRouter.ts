@@ -9,6 +9,6 @@ Vue.use(VueRouter);
 
 const applicationRouter = new VueRouter({
     routes: LoginRout.concat(HomeRout, Timeline, Profile)
-  })
+});
 
-  export default applicationRouter;
+export default applicationRouter;

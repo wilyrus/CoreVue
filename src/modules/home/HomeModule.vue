@@ -17,13 +17,13 @@ import ActivityContainer from '../../components/activity/ActivityContainer.vue';
 import ProfileCard from '../../components/profile/ProfileCard.vue';
 
 export default Vue.extend({
-  components: {
-      CardContainer,
-      ServicesContainer,
-      SocialContainer,
-      ActivityContainer,
-      ProfileCard
-  }
+    components: {
+        CardContainer,
+        ServicesContainer,
+        SocialContainer,
+        ActivityContainer,
+        ProfileCard
+    }
 });
 </script>
 

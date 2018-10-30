@@ -10,19 +10,19 @@ import ActivityItem from './ActivityItem.vue';
 import { TweenLite } from 'gsap';
 
 export default Vue.extend({
-  computed: {
-    card(): any {
-      return this.$store.state.ActivityStore;
+    computed: {
+        card(): any {
+            return this.$store.state.ActivityStore;
+        }
+    },
+    components: {
+        ActivityItem
+    },
+    methods: {
+        navigateToTimeline() {
+            this.$router.push('timeline');
+        }
     }
-  },
-  components: {
-    ActivityItem
-  },
-  methods: {
-    navigateToTimeline() {
-      this.$router.push('timeline')
-    }
-  }
 });
 </script>
 

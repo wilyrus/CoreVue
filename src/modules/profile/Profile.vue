@@ -7,9 +7,9 @@ import Vue from 'vue';
 import ProfilePage from '../../components/profile/ProfilePage.vue';
 
 export default Vue.extend({
-  components: {
-      ProfilePage
-  }
+    components: {
+        ProfilePage
+    }
 });
 </script>
 

@@ -42,6 +42,6 @@ export default Vue.extend({
     background-color: #efeff4;
 }
 .card-text {
-  padding: 10px
+    padding: 10px;
 }
 </style>

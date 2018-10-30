@@ -20,24 +20,24 @@
 import Vue from 'vue';
 
 export default Vue.extend({
-  computed: {
-    profileCard(): any {
-      return this.$store.state.ProfileStore;
+    computed: {
+        profileCard(): any {
+            return this.$store.state.ProfileStore;
+        }
+    },
+    methods: {
+        navigatieToProfilePage() {
+            this.$router.push('/profile');
+        }
     }
-  },
-  methods: {
-    navigatieToProfilePage() {
-      this.$router.push('/profile');
-    }
-  }
 });
 </script>
 
 <style>
 .profile-card {
-  flex: 1;
-  width: auto;
-      padding: 10px;
-          flex-direction: row;
+    flex: 1;
+    width: auto;
+    padding: 10px;
+    flex-direction: row;
 }
 </style>
