@@ -12,8 +12,6 @@
             color="green"
             small
           >
-            <v-layout pt-3>
-            </v-layout>
           </v-timeline-item>
           <v-timeline-item
            class="timeline-preview_item"
@@ -29,8 +27,6 @@
             color="green"
             small
           >
-            <v-layout pt-3>
-            </v-layout>
           </v-timeline-item>
   
           <v-timeline-item
@@ -38,8 +34,6 @@
             color="green"
             small
           >
-            <v-layout pt-3>
-            </v-layout>
           </v-timeline-item>
         </v-timeline>
     </div>

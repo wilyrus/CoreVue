@@ -29,7 +29,7 @@
         readonly="true"
       ></v-text-field>
 </v-form>
-         
+   <v-btn color="info">Выйти</v-btn>      
 </div>
 </template>
 
