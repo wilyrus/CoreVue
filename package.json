@@ -1,6 +1,6 @@
 {
-  "name": "vueapp",
-  "version": "0.0.1",
+  "name": "corevue",
+  "version": "0.0.2",
   "description": "just another application",
   "main": "index.js",
   "scripts": {
