@@ -1,13 +1,8 @@
 <template>
-    <transition-group appear
-      v-on:before-enter="beforeEnter"
-      v-on:enter="enter"    
-     tag="div"
-      class="dashboard-cards content__list"
-       name="service-wrapper">
-    <template v-for="item in cards" >
-      <service-item :key="item.name" v-bind:card="item"></service-item>
-    </template>
+    <transition-group appear v-on:before-enter="beforeEnter" v-on:enter="enter" tag="div" class="dashboard-cards content__list" name="service-wrapper">
+        <template v-for="item in cards">
+            <service-item :key="item.name" v-bind:card="item"></service-item>
+        </template>
     </transition-group>
 </template>
 

@@ -1,15 +1,10 @@
 <template>
-    <div 
-    class="card-container"
-     v-on:click="navigateToUrl">
-      <v-badge
-        overlap
-        color="red"
-      >
-      <span slot="badge">6</span>
-    </v-badge>
-    <span class="card-title">{{card.name}}</span>
-    <span class="card-text">{{card.text}}</span>
+    <div class="card-container" v-on:click="navigateToUrl">
+        <v-badge overlap color="red">
+            <span slot="badge">6</span>
+        </v-badge>
+        <span class="card-title">{{card.name}}</span>
+        <span class="card-text">{{card.text}}</span>
     </div>
 </template>
 

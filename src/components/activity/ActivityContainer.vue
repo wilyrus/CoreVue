@@ -1,6 +1,6 @@
 <template>
-  <div v-on:click="navigateToTimeline">    
-      <activity-item v-bind:card="card"></activity-item>
+  <div v-on:click="navigateToTimeline">
+    <activity-item v-bind:card="card"></activity-item>
   </div>
 </template>
 

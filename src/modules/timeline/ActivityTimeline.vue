@@ -1,5 +1,5 @@
 <template>
-    <ActivityTimeline/>
+    <ActivityTimeline />
 </template>
 
 <script lang="ts">

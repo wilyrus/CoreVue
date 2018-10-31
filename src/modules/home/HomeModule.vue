@@ -1,10 +1,10 @@
 <template>
     <div>
-    <CardContainer/>
-    <ActivityContainer/>
-    <ServicesContainer/>
-    <SocialContainer/>
-    <ProfileCard/>
+        <CardContainer />
+        <ActivityContainer />
+        <ServicesContainer />
+        <SocialContainer />
+        <ProfileCard />
     </div>
 </template>
 

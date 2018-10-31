@@ -1,12 +1,8 @@
 <template>
     <div class="activity-card_container">
-                <v-avatar
-            :tile="tile"
-            :size="80"
-            color="grey lighten-4"
-          >
+        <v-avatar :tile="tile" :size="80" color="grey lighten-4">
             <img :src="message.avatar" alt="avatar">
-          </v-avatar>
+        </v-avatar>
         <span class="activity-card_title">{{message.name}}</span>
         <span class="activity-card_title">{{message.date}}</span>
         <span class="activity-card_title">{{message.text}}</span>

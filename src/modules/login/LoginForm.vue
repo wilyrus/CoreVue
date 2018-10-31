@@ -1,30 +1,19 @@
 <template>
-      <div class="form-container">
-          <div class="login-container">
-          <picture class="picture-container">
- <source srcset="../../resources/logo.png">
- <img src="../../resources/logo.png">
-</picture>
-          <span class="login-title">Авторизация</span>
-          <div class="form-group">
-    <v-form v-model="valid" class="login-from">
-      <v-text-field
-        v-model="name"
-        :rules="nameRules"
-        :counter="10"
-        label="Логин"
-        required
-      ></v-text-field>
-      <v-text-field
-        v-model="email"
-        :rules="emailRules"
-        label="Пароль"
-        required
-      ></v-text-field>
-    </v-form>
-     <v-btn v-on:click="navigateToHome" class="login-button" color="white">Войти</v-btn>
-    </div>
-    </div>
+    <div class="form-container">
+        <div class="login-container">
+            <picture class="picture-container">
+                <source srcset="../../resources/logo.png">
+                <img src="../../resources/logo.png">
+            </picture>
+            <span class="login-title">Авторизация</span>
+            <div class="form-group">
+                <v-form v-model="valid" class="login-from">
+                    <v-text-field v-model="name" :rules="nameRules" :counter="10" label="Логин" required></v-text-field>
+                    <v-text-field v-model="email" :rules="emailRules" label="Пароль" required></v-text-field>
+                </v-form>
+                <v-btn v-on:click="navigateToHome" class="login-button" color="white">Войти</v-btn>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -48,7 +37,6 @@ export default Vue.extend({
 </script>
 
 <style>
-
 .form-container {
     display: flex;
     justify-content: center;
@@ -62,7 +50,7 @@ export default Vue.extend({
     margin-top: -48px;
     flex: 1;
 }
-.picture-container{
+.picture-container {
     text-align: center;
     margin-top: -100px;
 }
@@ -82,13 +70,13 @@ export default Vue.extend({
     flex-direction: column;
 }
 .login-container.login-button,
-.login-container .v-btn:not(.v-btn--depressed):not(.v-btn--flat){
+.login-container .v-btn:not(.v-btn--depressed):not(.v-btn--flat) {
     text-transform: uppercase;
     color: #e74d3b;
     border: 1px solid #e74d3b !important;
     margin: 20px 0 15px;
     border-radius: 5px;
-    box-shadow:  0 2px 2px 0 rgba(100,100,100,.14);
+    box-shadow: 0 2px 2px 0 rgba(100, 100, 100, 0.14);
 }
 .form-container .login-button .v-btn__content {
     text-transform: uppercase;

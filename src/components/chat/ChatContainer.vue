@@ -1,17 +1,14 @@
 <template>
-  <div class="chat-container">    
-      <div class="messages-container">
-          <template v-for="message in messages" >
-      <chat-item :key="message.name" v-bind:message="message"></chat-item>
-    </template>
-</div>
-          <v-form v-model="valid" class="login-from">
-      <v-text-field
-        v-model="name"
-        label="Chat in welcome..."
-      ></v-text-field>
-    </v-form>
-  </div>
+    <div class="chat-container">
+        <div class="messages-container">
+            <template v-for="message in messages">
+                <chat-item :key="message.name" v-bind:message="message"></chat-item>
+            </template>
+        </div>
+        <v-form v-model="valid" class="login-from">
+            <v-text-field v-model="name" label="Chat in welcome..."></v-text-field>
+        </v-form>
+    </div>
 </template>
 
 <script lang="ts">

@@ -1,17 +1,13 @@
 <template>
-    <div class="card-container profile-card" v-on:click='navigatieToProfilePage'>
-        <v-avatar
-            :tile="tile"
-            :size="80"
-            color="grey lighten-4"
-          >
-            <img src="../../resources/avatar.jpg" alt="avatar">
-          </v-avatar>
-          <div>
+  <div class="card-container profile-card" v-on:click='navigatieToProfilePage'>
+    <v-avatar :tile="tile" :size="80" color="grey lighten-4">
+      <img src="../../resources/avatar.jpg" alt="avatar">
+    </v-avatar>
+    <div>
       <span class="card-title">{{profileCard.name}}</span>
       <span>{{profileCard.description}}</span>
-          </div>
     </div>
+  </div>
 </template>
 
 <script lang="ts">

@@ -1,42 +1,22 @@
 <template>
-    <div class="activity-card_container">
+  <div class="activity-card_container">
     <span class="activity-card_title">{{card.name}}</span>
     <span>{{card.description}}</span>
-            <v-timeline
-             class="timeline-preview"
-          align-top
-          dense
-        >
-          <v-timeline-item
-           class="timeline-preview_item"
-            color="green"
-            small
-          >
-          </v-timeline-item>
-          <v-timeline-item
-           class="timeline-preview_item"
-            color="green"
-            small
-          >
-            <v-layout wrap pt-3>
-            </v-layout>
-          </v-timeline-item>
-  
-          <v-timeline-item
-           class="timeline-preview_item"
-            color="green"
-            small
-          >
-          </v-timeline-item>
-  
-          <v-timeline-item
-           class="timeline-preview_item"
-            color="green"
-            small
-          >
-          </v-timeline-item>
-        </v-timeline>
-    </div>
+    <v-timeline class="timeline-preview" align-top dense>
+      <v-timeline-item class="timeline-preview_item" color="green" small>
+      </v-timeline-item>
+      <v-timeline-item class="timeline-preview_item" color="green" small>
+        <v-layout wrap pt-3>
+        </v-layout>
+      </v-timeline-item>
+
+      <v-timeline-item class="timeline-preview_item" color="green" small>
+      </v-timeline-item>
+
+      <v-timeline-item class="timeline-preview_item" color="green" small>
+      </v-timeline-item>
+    </v-timeline>
+  </div>
 </template>
 
 <script lang="ts">

@@ -1,16 +1,7 @@
 <template>
-    <v-timeline>
-          <transition-group appear
-      v-on:before-enter="beforeEnter"
-      v-on:enter="enter"    
-     tag="div" name="pointTransition">
-      <v-timeline-item
-      class="pointTransition"
-        v-for="point in points"
-        :key="point.title"
-        color="red lighten-2"
-        large
-      >
+  <v-timeline>
+    <transition-group appear v-on:before-enter="beforeEnter" v-on:enter="enter" tag="div" name="pointTransition">
+      <v-timeline-item class="pointTransition" v-for="point in points" :key="point.title" color="red lighten-2" large>
         <span slot="opposite">{{point.subtitle}}</span>
         <v-card class="elevation-2">
           <v-card-title class="headline">{{point.title}}</v-card-title>
@@ -19,8 +10,8 @@
           </v-card-text>
         </v-card>
       </v-timeline-item>
-      </transition-group>
-    </v-timeline>
+    </transition-group>
+  </v-timeline>
 </template>
 
 <script lang="ts">
