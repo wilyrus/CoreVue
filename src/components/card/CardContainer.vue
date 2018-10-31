@@ -1,16 +1,12 @@
 <template>
-<div class="dashboard">
-  <div class="dashboard-cards">
     <transition-group appear
       v-on:before-enter="beforeEnter"
       v-on:enter="enter"    
-     tag="div" class="content__list" name="company">
+     tag="div" class="dashboard-cards content__list" name="company">
     <div class="company" v-for="item in cards" :key="item.name">
       <card-item v-bind:card="item"></card-item>
     </div>
     </transition-group>
-  </div>
-    </div>
 </template>
 
 <script lang="ts">
@@ -52,12 +48,6 @@ export default Vue.extend({
 </script>
 
 <style>
-.dashboard {
-    display: flex;
-    margin: 15px;
-    flex-direction: column;
-    overflow: hidden;
-}
 .dashboard-title {
     font-size: 1.5em;
 }

@@ -29,7 +29,7 @@
         readonly="true"
       ></v-text-field>
 </v-form>
-   <v-btn color="info">Выйти</v-btn>      
+   <v-btn v-on:click="logout" color="info">Выйти</v-btn>      
 </div>
 </template>
 
@@ -48,6 +48,11 @@ export default Vue.extend({
     computed: {
         profileCard(): any {
             return this.$store.state.ProfileStore;
+        }
+    },
+    methods: {
+        logout() {
+            this.$router.push('login');
         }
     }
 });
