@@ -52,5 +52,7 @@ export default Vue.extend({
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
 }
 </style>

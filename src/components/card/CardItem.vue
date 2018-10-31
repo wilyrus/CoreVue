@@ -34,11 +34,9 @@ export default Vue.extend({
     padding: 5px;
 }
 .card-container {
-    background-color: white;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     display: flex;
     flex-direction: column;
-    margin: 10px;
+    margin: 30px;
     width: 10.5em;
     height: 10em;
     border-radius: 10px;
