@@ -1,9 +1,9 @@
 <template>
   <div class="chat-container">    
       <div class="messages-container">
-          <div class="company" v-for="message in messages" :key="message.name">
-      <chat-item v-bind:message="message"></chat-item>
-    </div>
+          <template v-for="message in messages" >
+      <chat-item :key="message.name" v-bind:message="message"></chat-item>
+    </template>
 </div>
           <v-form v-model="valid" class="login-from">
       <v-text-field

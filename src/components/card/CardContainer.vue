@@ -1,11 +1,11 @@
 <template>
     <transition-group appear
       v-on:before-enter="beforeEnter"
-      v-on:enter="enter"    
-     tag="div" class="dashboard-cards content__list" name="company">
-    <div class="company" v-for="item in cards" :key="item.name">
-      <card-item v-bind:card="item"></card-item>
-    </div>
+      v-on:enter="enter"
+     tag="div" class="content__list" name="company">
+    <template v-for="item in cards">
+      <card-item :key="item.name" v-bind:card="item"></card-item>
+    </template>
     </transition-group>
 </template>
 
@@ -54,9 +54,5 @@ export default Vue.extend({
 .content__list {
     display: flex;
     flex-wrap: wrap;
-}
-
-.company {
-    position: relative;
 }
 </style>

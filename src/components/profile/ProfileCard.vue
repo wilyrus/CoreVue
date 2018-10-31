@@ -1,5 +1,4 @@
 <template>
-<div>
     <div class="card-container profile-card" v-on:click='navigatieToProfilePage'>
         <v-avatar
             :tile="tile"
@@ -13,7 +12,6 @@
       <span>{{profileCard.description}}</span>
           </div>
     </div>
-</div>
 </template>
 
 <script lang="ts">

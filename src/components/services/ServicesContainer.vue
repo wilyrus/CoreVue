@@ -5,9 +5,9 @@
      tag="div"
       class="dashboard-cards content__list"
        name="service-wrapper">
-    <div class="service-wrapper" v-for="item in cards" :key="item.name">
-      <service-item v-bind:card="item"></service-item>
-    </div>
+    <template v-for="item in cards" >
+      <service-item :key="item.name" v-bind:card="item"></service-item>
+    </template>
     </transition-group>
 </template>
 
@@ -20,7 +20,7 @@ let inc = 0;
 
 export default Vue.extend({
     data: () => ({
-        presentationDelay: 0
+        presentationDelay: 4
     }),
     computed: {
         cards(): any {

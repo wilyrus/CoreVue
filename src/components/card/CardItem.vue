@@ -44,11 +44,11 @@ export default Vue.extend({
     display: flex;
     flex-direction: column;
     margin: 10px;
-    flex-basis: 50%;
     width: 10.5em;
     height: 10em;
     border-radius: 10px;
     background-color: #efeff4;
+    position: relative;
 }
 .card-text {
     padding: 10px;
