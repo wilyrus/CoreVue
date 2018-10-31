@@ -10,9 +10,9 @@ type ProfileStore = {
 
 const store: ProfileStore = {
     state: {
-        name: 'name1',
-        subname: 'subname1',
-        description: 'description1',
+        name: 'Артём Михайлович',
+        subname: 'Степанов',
+        description: 'Ведущий специалист пресс-службы',
  }
   };
 
