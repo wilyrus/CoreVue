@@ -1,5 +1,7 @@
 <template>
-    <div class="card-container">
+    <div 
+    class="card-container"
+     v-on:click="navigateToUrl">
       <v-badge
         overlap
         color="red"
@@ -15,7 +17,14 @@
 import Vue from 'vue';
 
 export default Vue.extend({
-    props: ['card']
+    props: ['card'],
+    methods: {
+        navigateToUrl() {
+            if (this.card.url) {
+                this.$router.push(this.card.url);
+            }
+        }
+    }
 });
 </script>
 

@@ -6,6 +6,7 @@ import SocialStore from './components/social/SocialStore';
 import ActivityStore from './components/activity/ActivityStore';
 import TimelineStore from './components/timeline/TimelineStore';
 import ProfileStore from './components/profile/ProfileStore';
+import ChatStore from './components/chat/ChatStore';
 
 Vue.use(Vuex);
 
@@ -17,7 +18,8 @@ const store = new Vuex.Store({
         SocialStore,
         ActivityStore,
         TimelineStore,
-        ProfileStore
+        ProfileStore,
+        ChatStore
     }
 });
 
