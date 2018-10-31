@@ -1,7 +1,7 @@
 <template>
     <div class="navigation-container" v-if="show">
         <v-btn :disabled=!showBackButton v-on:click="navigateBack" flat icon color="white">
-            <v-icon v-show="showBackButton" large color="black">keyboard_arrow_left</v-icon>
+            <v-icon v-show="showBackButton" medium color="black">keyboard_arrow_left</v-icon>
         </v-btn>
         <span class="navigation-title">{{navigationTitle}}</span>
         <v-btn flat icon color="white">
@@ -38,16 +38,12 @@ export default Vue.extend({
             this.$router.go(-1);
         },
         updateNavigation() {
-            if (this.$route.name === 'login' || this.$route.name === 'default') {
+            if (this.$route.name === 'login' || this.$route.name === 'default' || this.$route.name === 'home') {
                 this.show = false;
             } else {
                 this.show = true;
             }
-            if (this.$route.name === 'home') {
-                this.showBackButton = false;
-            } else {
-                this.showBackButton = true;
-            }
+            this.showBackButton = true;
             this.navigationTitle = routingTitles[this.$route.name || ''] || '';
         }
     },
@@ -75,6 +71,6 @@ export default Vue.extend({
     align-items: center;
 }
 .navigation-title {
-    font-size: 2em;
+    font-size: 1.5em;
 }
 </style>

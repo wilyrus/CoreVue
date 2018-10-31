@@ -2,6 +2,8 @@ import Vue from 'vue';
 import ApplicationRouter from './ApplicationRouter';
 import ApplicationStore from './ApplicationStore';
 import NavigationToolbar from './components/navigation/NavigationToolbar.vue';
+import BottomNavigation from './components/bottomNavigation/BottomNavigation.vue';
+
 import Vuetify from 'vuetify';
 import 'vuetify/dist/vuetify.min.css';
 import './resources/main.css';
@@ -21,16 +23,16 @@ export default new Vue({
     template: `
   <div class="body-container">
   <NavigationToolbar/>
-  <div class="content-container">
   <transition name="slide-fade">
-  <router-view></router-view>
+  <router-view class="content-container"></router-view>
   </transition>
-</div>
+  <BottomNavigation/>
 </div>
   `,
     store: ApplicationStore,
     router: ApplicationRouter,
     components: {
-        NavigationToolbar
+        NavigationToolbar,
+        BottomNavigation
     }
 });
