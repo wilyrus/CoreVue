@@ -17,38 +17,38 @@ const store: CardStore = {
     state: {
         messages: [
             {
-                avatar: '../../resources/avatar.jpg',
-                name: 'subname1',
+                avatar: '../../resources/avatar2.jpg',
+                name: 'Анатолий',
                 date: new Date(),
                 text: '123'
             },
             {
                 avatar: '../../resources/avatar.jpg',
-                name: 'subname2',
+                name: 'Марина',
+                date: new Date(),
+                text: '123'
+            },
+            {
+                avatar: '../../resources/avatar2.jpg',
+                name: 'Анатолий',
+                date: new Date(),
+                text: '123'
+            },
+            {
+                avatar: '../../resources/avatar2.jpg',
+                name: 'Анатолий',
                 date: new Date(),
                 text: '123'
             },
             {
                 avatar: '../../resources/avatar.jpg',
-                name: 'subname3',
+                name: 'Марина',
                 date: new Date(),
                 text: '123'
             },
             {
                 avatar: '../../resources/avatar.jpg',
-                name: 'subname4',
-                date: new Date(),
-                text: '123'
-            },
-            {
-                avatar: '../../resources/avatar.jpg',
-                name: 'subname5',
-                date: new Date(),
-                text: '123'
-            },
-            {
-                avatar: '../../resources/avatar.jpg',
-                name: 'subname6',
+                name: 'Марина',
                 date: new Date(),
                 text: '123'
             }
