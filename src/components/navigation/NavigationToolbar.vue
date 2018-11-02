@@ -22,7 +22,9 @@ const routingTitles: titles = {
     login: 'Авторизация',
     home: 'Домашний экран',
     profile: 'Профиль',
-    timeline: 'График'
+    timeline: 'График',
+    dashboard: 'Дашборд',
+    chat: 'Сообщения'
 };
 
 export default Vue.extend({

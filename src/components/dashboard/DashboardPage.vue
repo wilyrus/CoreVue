@@ -6,7 +6,8 @@
         <v-data-table :headers="headers" :items="gridData" hide-actions class="elevation-1">
             <template slot="items" slot-scope="props">
                 <td>{{ props.item.name }}</td>
-                <td>{{ props.item.iron }}</td>
+                <td>{{ props.item.load }}</td>
+                <td>{{ props.item.people }}</td>
             </template>
         </v-data-table>
     </div>

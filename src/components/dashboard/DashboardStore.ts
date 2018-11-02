@@ -41,55 +41,27 @@ const store: CardStore = {
             ]
         },
         listData: {
-            headers: [
-                {
-                    text: 'Dessert (100g serving)',
-                    align: 'left',
-                    sortable: false,
-                    value: 'name'
-                },
-                { text: 'Iron (%)', value: 'iron' }
-            ],
+            headers: [{ text: 'Отдел', value: 'name' }, { text: 'Загруженность', value: 'load' }, { text: 'Персонал', value: 'people' }],
             gridData: [
                 {
-                    name: 'Frozen Yogurt',
-                    iron: '1%'
+                    name: 'RDN',
+                    load: 19,
+                    people: 3
                 },
                 {
-                    name: 'Ice cream sandwich',
-                    iron: '1%'
+                    name: 'Дизайн',
+                    load: 17,
+                    people: 2
                 },
                 {
-                    name: 'Eclair',
-                    iron: '7%'
+                    name: 'Аналитика',
+                    load: 3,
+                    people: 4
                 },
                 {
-                    name: 'Cupcake',
-                    iron: '8%'
-                },
-                {
-                    name: 'Gingerbread',
-                    iron: '16%'
-                },
-                {
-                    name: 'Jelly bean',
-                    iron: '0%'
-                },
-                {
-                    name: 'Lollipop',
-                    iron: '2%'
-                },
-                {
-                    name: 'Honeycomb',
-                    iron: '45%'
-                },
-                {
-                    name: 'Donut',
-                    iron: '22%'
-                },
-                {
-                    name: 'KitKat',
-                    iron: '6%'
+                    name: 'QA',
+                    load: 5,
+                    people: 6
                 }
             ]
         }
