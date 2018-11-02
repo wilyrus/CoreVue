@@ -38,7 +38,7 @@ const store: TimelineStore = {
                 type: EventType.meet
             },
             {
-                title: 'Отчёт',
+                title: 'Анализ',
                 description: 'Выполнение cost-benefit для процесса найма',
                 type: EventType.another
             },

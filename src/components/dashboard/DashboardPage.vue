@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="canvs-container card-container">
-            <canvas id="myChart"></canvas>
+            <canvas id="pageChart"></canvas>
         </div>
         <v-data-table :headers="headers" :items="gridData" hide-actions class="elevation-1">
             <template slot="items" slot-scope="props">
@@ -19,7 +19,7 @@ import * as Chart from 'chart.js';
 
 export default Vue.extend({
     mounted() {
-        var ctx = document.getElementById('myChart');
+        var ctx = document.getElementById('pageChart');
         if (ctx) {
             // @ts-ignore
             var myChart = new Chart(ctx, {

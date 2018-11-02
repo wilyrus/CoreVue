@@ -1,7 +1,7 @@
 <template>
     <div class="chat-card_container" v-bind:class="{ personal: isPersonal }">
         <div class="chat_header">
-            <v-avatar :tile="tile" :size="80" color="grey lighten-4">
+            <v-avatar :size="60">
                 <img :src="message.avatar" alt="avatar">
             </v-avatar>
             <span class="activity-card_title">{{message.name}}</span>
