@@ -7,6 +7,7 @@ import ActivityStore from './components/activity/ActivityStore';
 import TimelineStore from './components/timeline/TimelineStore';
 import ProfileStore from './components/profile/ProfileStore';
 import ChatStore from './components/chat/ChatStore';
+import DashboardStore from './components/dashboard/DashboardStore';
 
 Vue.use(Vuex);
 
@@ -19,7 +20,8 @@ const store = new Vuex.Store({
         ActivityStore,
         TimelineStore,
         ProfileStore,
-        ChatStore
+        ChatStore,
+        DashboardStore
     }
 });
 
