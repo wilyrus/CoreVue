@@ -6,17 +6,15 @@
         </span>
         <span class="card-text">{{card.description}}</span>
         <v-timeline class="timeline-preview" align-top dense>
-            <v-timeline-item class="timeline-preview_item" color="green" small>
+            <v-timeline-item fill-dot class="timeline-preview_item" color="rgb(0, 113, 185)" small>
             </v-timeline-item>
-            <v-timeline-item class="timeline-preview_item" color="green" small>
-                <v-layout wrap pt-3>
-                </v-layout>
+            <v-timeline-item fill-dot class="timeline-preview_item" color="rgb(0, 113, 185)" small>
             </v-timeline-item>
 
-            <v-timeline-item class="timeline-preview_item" color="green" small>
+            <v-timeline-item fill-dot class="timeline-preview_item" color="rgb(0, 113, 185)" small>
             </v-timeline-item>
 
-            <v-timeline-item class="timeline-preview_item" color="green" small>
+            <v-timeline-item fill-dot class="timeline-preview_item" color="rgb(0, 113, 185)" small>
             </v-timeline-item>
         </v-timeline>
     </div>
