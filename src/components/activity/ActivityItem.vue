@@ -1,7 +1,10 @@
 <template>
     <div class="activity-card_container">
-        <span class="activity-card_title">{{card.name}}</span>
-        <span>{{card.description}}</span>
+        <span class="activity-card_title">
+            <v-icon>assignment</v-icon>
+            <span>{{card.name}}</span>
+        </span>
+        <span class="card-text">{{card.description}}</span>
         <v-timeline class="timeline-preview" align-top dense>
             <v-timeline-item class="timeline-preview_item" color="green" small>
             </v-timeline-item>
@@ -36,6 +39,8 @@ export default Vue.extend({
 }
 .activity-card_title {
     padding: 5px;
+    background-color: rgb(210, 210, 216);
+    font-size: 1.1em;
 }
 .activity-card_container {
     background-color: white;
@@ -47,12 +52,16 @@ export default Vue.extend({
     height: 10em;
     border-radius: 10px;
     background-color: #efeff4;
+    overflow: hidden;
 }
 .timeline-preview {
     transform: rotate(90deg);
-    top: 80px;
+    top: 17px;
 }
 .timeline-preview_item {
     height: 80px;
+}
+.card-text {
+    padding: 10px;
 }
 </style>

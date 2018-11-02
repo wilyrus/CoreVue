@@ -10,8 +10,9 @@ type ActivityStore = {
 
 const store: ActivityStore = {
     state: {
-        name: 'Активность',
-        subname: 'subname1'
+        name: 'Статус',
+        subname: 'subname1',
+        description: 'Созвониться с А.А. по поводу требований к продукту'
     }
 };
 
