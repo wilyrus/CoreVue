@@ -24,17 +24,15 @@ const store: CardStore = {
                 name: 'Мои задачи',
                 subname: 'subname1',
                 icon: 'assignment'
-                //text: 'Произвести инвентаризацию склада'
             },
             {
                 name: 'Сообщения',
                 url: 'chat',
                 subname: 'subname2',
                 icon: 'mail_outline'
-                //text: 'Предлагаю запланировать встречу на 18 часов вечера'
             },
             {
-                name: 'Документооборот',
+                name: 'Поручения',
                 url: 'chat',
                 subname: 'subname2',
                 icon: 'file_copy'

@@ -1,6 +1,12 @@
 <template>
-    <div class="canvs-container card-container" v-on:click="navigateToDashboardPage">
-        <canvas id="myChart"></canvas>
+    <div class="activity-card_container canvas-wrp">
+        <span class="activity-card_title">
+            <v-icon>assignment</v-icon>
+            <span>Эффективность</span>
+        </span>
+        <div class="canvs-container" v-on:click="navigateToDashboardPage">
+            <canvas id="myChart"></canvas>
+        </div>
     </div>
 </template>
 
@@ -45,8 +51,11 @@ export default Vue.extend({
 });
 </script>
 <style>
+.canvas-wrp {
+    height: 230px;
+}
 .canvs-container {
-    height: 200px;
+    height: 230px;
     width: auto;
 }
 </style>

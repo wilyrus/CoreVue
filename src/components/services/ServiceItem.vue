@@ -1,6 +1,6 @@
 <template>
-    <div class="service-container">
-        <span class="card-title">{{card.name}}</span>
+    <div class="activity-card_container">
+        <span class="activity-card_title">{{card.name}}</span>
         <span>{{card.description}}</span>
     </div>
 </template>
