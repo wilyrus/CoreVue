@@ -1,8 +1,8 @@
 <template>
-  <div class="service-container">
-    <span class="card-title">{{card.name}}</span>
-    <span>{{card.description}}</span>
-  </div>
+    <div class="service-container">
+        <span class="card-title">{{card.name}}</span>
+        <span>{{card.description}}</span>
+    </div>
 </template>
 
 <script lang="ts">
@@ -25,7 +25,6 @@ export default Vue.extend({
 .service-container {
     position: relative;
     background-color: white;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     display: flex;
     flex-direction: column;
     margin: 10px;

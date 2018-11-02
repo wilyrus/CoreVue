@@ -1,22 +1,22 @@
 <template>
-  <div class="activity-card_container">
-    <span class="activity-card_title">{{card.name}}</span>
-    <span>{{card.description}}</span>
-    <v-timeline class="timeline-preview" align-top dense>
-      <v-timeline-item class="timeline-preview_item" color="green" small>
-      </v-timeline-item>
-      <v-timeline-item class="timeline-preview_item" color="green" small>
-        <v-layout wrap pt-3>
-        </v-layout>
-      </v-timeline-item>
+    <div class="activity-card_container">
+        <span class="activity-card_title">{{card.name}}</span>
+        <span>{{card.description}}</span>
+        <v-timeline class="timeline-preview" align-top dense>
+            <v-timeline-item class="timeline-preview_item" color="green" small>
+            </v-timeline-item>
+            <v-timeline-item class="timeline-preview_item" color="green" small>
+                <v-layout wrap pt-3>
+                </v-layout>
+            </v-timeline-item>
 
-      <v-timeline-item class="timeline-preview_item" color="green" small>
-      </v-timeline-item>
+            <v-timeline-item class="timeline-preview_item" color="green" small>
+            </v-timeline-item>
 
-      <v-timeline-item class="timeline-preview_item" color="green" small>
-      </v-timeline-item>
-    </v-timeline>
-  </div>
+            <v-timeline-item class="timeline-preview_item" color="green" small>
+            </v-timeline-item>
+        </v-timeline>
+    </div>
 </template>
 
 <script lang="ts">
@@ -39,7 +39,6 @@ export default Vue.extend({
 }
 .activity-card_container {
     background-color: white;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     display: flex;
     flex-direction: column;
     margin: 10px;

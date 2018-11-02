@@ -1,7 +1,14 @@
+enum EventType {
+    call = "phone",
+    meet = "people",
+    another = "calendar_today"
+}
+
 type TimelineState = {
     title: string,
-    subtitle: string,
-    description: string
+    description: string,
+    date?: Date,
+    type: EventType
 };
 
 export interface TimelinesState {
@@ -16,34 +23,34 @@ const store: TimelineStore = {
     state: {
         timelines: [
             {
-                title: 'name1',
-                subtitle: 'subname1',
-                description: 'description1'
+                title: 'Звонок',
+                description: 'Созвониться с А.А. по поводу требований к продукту',
+                type: EventType.call
             },
             {
-                title: 'name2',
-                subtitle: 'subname2',
-                description: 'description2'
+                title: 'Встреча',
+                description: 'Встреча с представителями компании С по поводу нового договора',
+                type: EventType.meet
             },
             {
-                title: 'name3',
-                subtitle: 'subname3',
-                description: 'description3'
+                title: 'Встреча',
+                description: 'Провести встречу по текущему статусу разработки продукта',
+                type: EventType.meet
             },
             {
-                title: 'name4',
-                subtitle: 'subname4',
-                description: 'description4'
+                title: 'Отчёт',
+                description: 'Выполнение cost-benefit для процесса найма',
+                type: EventType.another
             },
             {
-                title: 'name5',
-                subtitle: 'subname5',
-                description: 'description5'
+                title: 'Отчёт',
+                description: 'Отправвить еженедельный отчёт по подготовке релиза',
+                type: EventType.another
             },
             {
                 title: 'name6',
-                subtitle: 'subname6',
-                description: 'description6'
+                description: 'description6',
+                type: EventType.another
             }
         ]
     }

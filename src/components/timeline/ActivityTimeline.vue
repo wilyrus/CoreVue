@@ -2,7 +2,7 @@
     <div class="timeline_container">
         <v-timeline align-top dense>
             <transition-group appear v-on:before-enter="beforeEnter" v-on:enter="enter" tag="div" name="pointTransition">
-                <v-timeline-item fill-dot class="pointTransition" v-for="point in points" :key="point.title" icon="calendar_today" color="purple">
+                <v-timeline-item fill-dot class="pointTransition" v-for="point in points" :key="point.title" :icon="point.type" color="purple">
                     <v-card class="elevation-2">
                         <v-card-title class="purple lighten-2">
                             <span class="point-title white--text font-weight-light">{{point.title}}</span>

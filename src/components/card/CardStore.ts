@@ -44,18 +44,6 @@ const store: CardStore = {
                 url: 'chat',
                 subname: 'subname2',
                 icon: 'work_outline'
-            },
-            {
-                name: 'Закупки',
-                url: 'chat',
-                subname: 'subname2',
-                icon: 'outlined_flag'
-            },
-            {
-                name: 'Чаты',
-                url: 'chat',
-                subname: 'subname2',
-                icon: 'question_answer'
             }
         ]
     }
