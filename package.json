@@ -10,6 +10,7 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.4.2",
     "@mdi/font": "^3.0.39",
     "@types/chart.js": "^2.7.40",
     "@types/gsap": "^1.20.0",
