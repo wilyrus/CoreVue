@@ -1,5 +1,5 @@
 <template>
-    <div class="chat-card_container">
+    <div class="chat-card_container" v-bind:class="{ personal: isPersonal }">
         <div class="chat_header">
             <v-avatar :tile="tile" :size="80" color="grey lighten-4">
                 <img :src="message.avatar" alt="avatar">
@@ -15,7 +15,12 @@
 import Vue from 'vue';
 
 export default Vue.extend({
-    props: ['message']
+    props: ['message'],
+    data() {
+        return {
+            isPersonal: this.$props.message.name === 'Марина'
+        };
+    }
 });
 </script>
 
