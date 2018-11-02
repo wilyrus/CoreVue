@@ -1,9 +1,9 @@
 <template>
     <div class="activity-card_container canvas-wrp">
-        <span class="activity-card_title">
-            <v-icon>assignment</v-icon>
-            <span>Эффективность</span>
-        </span>
+        <div class="activity-card-header">
+            <v-icon class="activity-card-header__icon" large color="#0071b9">bar_chart</v-icon>
+            <span class="activity-card-header__title">Эффективность</span>
+        </div>
         <div class="canvs-container" v-on:click="navigateToDashboardPage">
             <canvas id="myChart"></canvas>
         </div>
@@ -51,11 +51,24 @@ export default Vue.extend({
 });
 </script>
 <style>
-.canvas-wrp {
-    height: 230px;
+.activity-card-header{
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 15px;
+    flex: none;
+}
+.activity-card-header__icon{
+    margin-right: 5px;
+}
+.activity-card-header__title{
+    color: #000;
+    font-weight: bold;
 }
 .canvs-container {
     height: 230px;
     width: auto;
+    padding: 0 10px;
 }
 </style>

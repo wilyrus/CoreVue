@@ -1,7 +1,8 @@
 type ServiceState = {
     name: string,
     subname?: string,
-    description?: string
+    description?: string,
+    icon?: string
 };
 
 export interface ServicesState {
@@ -18,13 +19,16 @@ const store: ServiceStore = {
         title: 'Dashboard',
         services: [
             {
-                name: 'Документооборот'
+                name: 'Документооборот',
+                icon: 'folder_open'
             },
             {
-                name: 'Командировки'
+                name: 'Командировки',
+                icon: 'work_outline'
             },
             {
-                name: 'Закупки'
+                name: 'Закупки',
+                icon: 'assignment'
             }
         ]
     }

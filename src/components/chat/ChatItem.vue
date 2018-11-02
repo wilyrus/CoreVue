@@ -1,13 +1,15 @@
 <template>
-    <div class="chat-card_container" v-bind:class="{ personal: isPersonal }">
-        <div class="chat_header">
-            <v-avatar :size="60">
+    <div class="chat-message" v-bind:class="{ personal: isPersonal }">
+        <div class="chat-message__header">
+            <v-avatar class="chat-header-avatar" :size="35">
                 <img :src="message.avatar" alt="avatar">
             </v-avatar>
-            <span class="activity-card_title">{{message.name}}</span>
-            <span class="activity-card_title">{{message.date}}</span>
+            <div class="chat-header-text">
+                <span class="chat-header-text__name">{{message.name}}</span>
+                <span class="chat-header-text__date">{{message.date}}</span>
+            </div>
         </div>
-        <span class="activity-card_title">{{message.text}}</span>
+        <div class="chat-message_text">{{message.text}}</div>
     </div>
 </template>
 
@@ -31,17 +33,41 @@ export default Vue.extend({
         height: 15em;
     }
 }
-.chat-card_container {
-    background-color: white;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+.chat-message {
+    background-color: #efeff4;
+    border: 1px solid rgba(0, 0, 0, 0.16);
     display: flex;
     flex-direction: column;
-    margin: 10px;
-    flex-basis: 50%;
-    min-width: 10em;
-    height: 10em;
+    margin: 5px 10px;
+    flex: none;
+    padding: 10px;
+    border-radius: 10px;
 }
-.chat_header {
+.chat-message.personal{
+    align-self: flex-end;
+}
+
+.chat-message__header {
     display: flex;
+    max-width: 100%;
+    flex: none;
+}
+.chat-header-text{
+    flex: 1 1 auto;
+    margin-left: 15px;
+}
+.chat-header-text__name{
+    display: inline-block;
+    width: 100%;
+    font-weight: bold;
+}
+.chat-header-text__date{
+    display: inline-block;
+    font-size: 12px;
+    color: #a0a0a1;
+}
+.chat-message_text{
+    width: 100%;
+    padding: 10px 0 0;
 }
 </style>

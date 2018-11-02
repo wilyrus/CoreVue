@@ -1,7 +1,10 @@
 <template>
     <div class="activity-card_container">
-        <span class="activity-card_title">{{card.name}}</span>
-        <span>{{card.description}}</span>
+        <div class="activity-card-header">
+            <v-icon class="activity-card-header__icon" large color="#0071b9">{{card.icon}}</v-icon>
+            <span class="activity-card-header__title">{{card.name}}</span>
+        </div>
+        <div class="activity-card-description">{{card.description}}</div>
     </div>
 </template>
 
@@ -24,7 +27,6 @@ export default Vue.extend({
 }
 .service-container {
     position: relative;
-    background-color: white;
     display: flex;
     flex-direction: column;
     margin: 10px;
@@ -33,5 +35,27 @@ export default Vue.extend({
     height: 10em;
     border-radius: 10px;
     background-color: #efeff4;
+}
+.activity-card-header{
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 15px;
+    flex: none;
+}
+.activity-card-header__icon{
+    margin-right: 10px;
+}
+.activity-card-header__title{
+    color: #000;
+    font-weight: bold;
+}
+.activity-card-description{
+    width: 100%;
+    padding: 0 15px 5px;
+}
+.activity-card-description:empty{
+    display: none;
 }
 </style>

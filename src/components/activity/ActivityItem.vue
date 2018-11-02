@@ -1,10 +1,10 @@
 <template>
-    <div class="activity-card_container">
-        <span class="activity-card_title">
-            <v-icon>assignment</v-icon>
-            <span>{{card.name}}</span>
-        </span>
-        <span class="card-text">{{card.description}}</span>
+    <div class="activity-card_container activity-card_time">
+        <div class="activity-card-header">
+            <v-icon class="activity-card-header__icon" large color="#0071b9">{{card.icon}}</v-icon>
+            <span class="activity-card-header__title">{{card.name}}</span>
+        </div>
+        <span class="activity-card-description">{{card.description}}</span>
         <v-timeline class="timeline-preview" align-top dense>
             <v-timeline-item fill-dot class="timeline-preview_item" color="rgb(0, 113, 185)" small>
             </v-timeline-item>
@@ -35,23 +35,39 @@ export default Vue.extend({
         height: 15em;
     }
 }
-.activity-card_title {
-    padding: 5px;
-    background-color: rgb(210, 210, 216);
-    font-size: 1.1em;
-}
+
 .activity-card_container {
-    background-color: white;
     display: flex;
     flex-direction: column;
     margin: 10px;
     flex-basis: 50%;
     min-width: 10em;
-    height: 10em;
     border-radius: 10px;
     background-color: #efeff4;
     overflow: hidden;
+    flex: none;
 }
+
+.activity-card_time{
+    height: 160px;
+}
+
+.activity-card-header{
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 15px;
+    flex: none;
+}
+.activity-card-header__icon{
+    margin-right: 10px;
+}
+.activity-card-header__title{
+    color: #000;
+    font-weight: bold;
+}
+
 .timeline-preview {
     transform: rotate(90deg);
     top: 17px;

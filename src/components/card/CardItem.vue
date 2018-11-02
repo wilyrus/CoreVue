@@ -43,6 +43,7 @@ export default Vue.extend({
     overflow: hidden;
     text-overflow: ellipsis;
     color: #000;
+    font-weight: bold;
 }
 .card-container {
     display: flex;
