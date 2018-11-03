@@ -3,20 +3,15 @@
         <div class="activity-card-header">
             <v-icon class="activity-card-header__icon" large color="#0071b9">{{card.icon}}</v-icon>
             <span class="activity-card-header__title">{{card.name}}</span>
+            <v-icon class="activity-card-header__icon navigation_arrow" large color="#0071b9">keyboard_arrow_right</v-icon>
         </div>
-        <span class="activity-card-description">{{card.description}}</span>
-        <v-timeline class="timeline-preview" align-top dense>
+        <div class="activity_body-container">
+                    <v-timeline class="timeline-preview" align-top dense>
             <v-timeline-item fill-dot class="timeline-preview_item" color="rgb(0, 113, 185)" small>
-            </v-timeline-item>
-            <v-timeline-item fill-dot class="timeline-preview_item" color="rgb(0, 113, 185)" small>
-            </v-timeline-item>
-
-            <v-timeline-item fill-dot class="timeline-preview_item" color="rgb(0, 113, 185)" small>
-            </v-timeline-item>
-
-            <v-timeline-item fill-dot class="timeline-preview_item" color="rgb(0, 113, 185)" small>
+                {{card.description}}
             </v-timeline-item>
         </v-timeline>
+        </div>
     </div>
 </template>
 
@@ -46,36 +41,41 @@ export default Vue.extend({
     background-color: #efeff4;
     overflow: hidden;
     flex: none;
+    box-shadow: 0 7px 10px rgba(0, 0, 0, 0.08), 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-.activity-card_time{
+.activity-card_time {
     height: 160px;
 }
 
-.activity-card-header{
+.activity-card-header {
     display: flex;
     width: 100%;
     justify-content: flex-start;
     align-items: center;
-    padding: 10px 15px;
+    padding: 8px;
     flex: none;
 }
-.activity-card-header__icon{
+.activity-card-header__icon:not(.navigation_arrow) {
     margin-right: 10px;
 }
-.activity-card-header__title{
+
+.activity-card-header__icon.navigation_arrow {
+    margin-left: auto;
+}
+
+.activity-card-header__title {
     color: #000;
     font-weight: bold;
 }
 
-.timeline-preview {
-    transform: rotate(90deg);
-    top: 17px;
-}
 .timeline-preview_item {
     height: 80px;
 }
 .card-text {
     padding: 10px;
+}
+.activity_body-container {
+    display: flex;
 }
 </style>

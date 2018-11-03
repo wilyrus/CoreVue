@@ -1,16 +1,16 @@
 <template>
     <v-bottom-nav :active.sync="bottomNav" :value="true" fixed color="white">
-        <v-btn color="teal" flat value="profile">
+        <v-btn color="rgb(0, 113, 185)" flat value="profile">
             <span>Профиль</span>
             <v-icon>account_circle</v-icon>
         </v-btn>
 
-        <v-btn color="teal" flat value="home">
+        <v-btn color="rgb(0, 113, 185)" flat value="home">
             <span>Домой</span>
             <v-icon>home</v-icon>
         </v-btn>
 
-        <v-btn color="teal" flat value="">
+        <v-btn color="rgb(0, 113, 185)" flat value="">
             <span>Search</span>
             <v-icon>search</v-icon>
         </v-btn>
@@ -37,6 +37,9 @@ export default Vue.extend({
         return {
             bottomNav: 'recent'
         };
+    },
+    beforeMount() {
+        this.updateNavigationSelection(this.$route.name);
     },
     watch: {
         bottomNav() {
