@@ -1,12 +1,12 @@
 <template>
     <div class="activity-card_container canvas-wrp" v-on:click="navigateToDashboardPage">
         <div class="activity-card-header">
-            <v-icon class="activity-card-header__icon" large color="#0071b9">bar_chart</v-icon>
+            <v-icon class="activity-card-header__icon" medium color="#0071b9">bar_chart</v-icon>
             <span class="activity-card-header__title">Эффективность</span>
-                    <v-icon class="activity-card-header__icon navigation_arrow" large color="#0071b9">keyboard_arrow_right</v-icon>
+            <v-icon class="activity-card-header__icon navigation_arrow" medium color="#0071b9">keyboard_arrow_right</v-icon>
 
         </div>
-        <div class="canvs-container">
+        <div class="canvas-container">
             <canvas id="myChart"></canvas>
         </div>
     </div>
@@ -53,8 +53,8 @@ export default Vue.extend({
 });
 </script>
 <style>
-.canvs-container {
-    height: 230px;
+.canvas-container {
+    height: 175px;
     width: auto;
     padding: 0 10px;
 }

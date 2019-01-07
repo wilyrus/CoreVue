@@ -1,7 +1,7 @@
 <template>
     <div class="activity-card_container">
         <div class="activity-card-header">
-            <v-icon class="activity-card-header__icon" large color="#0071b9">{{card.icon}}</v-icon>
+            <v-icon class="activity-card-header__icon" medium color="#0071b9">{{card.icon}}</v-icon>
             <span class="activity-card-header__title">{{card.name}}</span>
         </div>
         <div class="activity-card-description">{{card.description}}</div>

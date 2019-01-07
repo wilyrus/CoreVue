@@ -6,11 +6,12 @@ import Timeline from './routing/timeline/Timeline';
 import Profile from './routing/profile/Profile';
 import Chat from './routing/chat/Chat';
 import Dashboard from './routing/dashboard/Dashboard';
+import CardList from './routing/cardList/CardList';
 
 Vue.use(VueRouter);
 
 const applicationRouter = new VueRouter({
-    routes: LoginRout.concat(HomeRout, Timeline, Profile, Chat, Dashboard)
+    routes: LoginRout.concat(HomeRout, Timeline, Profile, Chat, Dashboard, CardList)
 });
 
 export default applicationRouter;

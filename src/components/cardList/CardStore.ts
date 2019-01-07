@@ -23,8 +23,7 @@ const store: CardStore = {
             {
                 name: 'Мои задачи',
                 subname: 'subname1',
-                icon: 'assignment_turned_in',
-                url: 'cardList'
+                icon: 'assignment_turned_in'
             },
             {
                 name: 'Сообщения',
@@ -34,13 +33,13 @@ const store: CardStore = {
             },
             {
                 name: 'Поручения',
-                url: 'cardList',
+                url: 'chat',
                 subname: 'subname2',
                 icon: 'outlined_flag'
             },
             {
                 name: 'Командировки',
-                url: 'cardList',
+                url: 'chat',
                 subname: 'subname2',
                 icon: 'work_outline'
             }

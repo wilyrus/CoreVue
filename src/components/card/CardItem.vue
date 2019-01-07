@@ -33,7 +33,7 @@ export default Vue.extend({
         height: 15em;
     }
 }
-.content-container{
+.content-container {
     padding-bottom: 76px;
 }
 .card-title {
@@ -56,32 +56,33 @@ export default Vue.extend({
     position: relative;
     align-items: center;
     justify-content: center;
+    box-shadow: 0 7px 10px rgba(0, 0, 0, 0.08), 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-.icon-content{
+.icon-content {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.icon-content .v-badge{
+.icon-content .v-badge {
     position: absolute;
 }
-.icon-content .v-badge__badge{
+.icon-content .v-badge__badge {
     left: auto;
     top: auto;
     margin: -12px -25px 0 0;
 }
 
-.card-container .card-container__icon{
+.card-container .card-container__icon {
     color: #0071b9;
 }
 
 .card-text {
     padding: 10px;
 }
-.card-text:empty{
-    display: none
+.card-text:empty {
+    display: none;
 }
 </style>

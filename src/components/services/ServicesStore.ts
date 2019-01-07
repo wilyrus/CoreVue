@@ -19,14 +19,6 @@ const store: ServiceStore = {
         title: 'Dashboard',
         services: [
             {
-                name: 'Документооборот',
-                icon: 'folder_open'
-            },
-            {
-                name: 'Командировки',
-                icon: 'work_outline'
-            },
-            {
                 name: 'Закупки',
                 icon: 'assignment'
             }

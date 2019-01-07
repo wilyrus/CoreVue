@@ -1,7 +1,7 @@
 const path = require('path');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const UglifyJSPlugin = require('terser-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const GRAPHICS_LIMIT = 1000000;
 const CopyWebpackPlugin = require('copy-webpack-plugin');
@@ -21,11 +21,6 @@ module.exports = {
         concatenateModules: true,
         minimizer: [
             new UglifyJSPlugin({
-                uglifyOptions: {
-                    compress: {
-                        warnings: false
-                    }
-                },
                 sourceMap: true,
                 parallel: true,
                 cache: true
