@@ -1,20 +1,25 @@
 <template>
-    <v-bottom-nav :active.sync="bottomNav" :value="true" fixed color="white">
-        <v-btn color="rgb(0, 113, 185)" flat value="profile">
-            <span>Профиль</span>
-            <v-icon>account_circle</v-icon>
-        </v-btn>
+  <v-bottom-nav :active.sync="bottomNav" :value="true" color="white">
+    <v-btn color="rgb(0, 113, 185)" flat value="profile">
+      <span>Профиль</span>
+      <v-icon>account_circle</v-icon>
+    </v-btn>
 
-        <v-btn color="rgb(0, 113, 185)" flat value="home">
-            <span>Домой</span>
-            <v-icon>home</v-icon>
-        </v-btn>
+    <v-btn color="rgb(0, 113, 185)" flat value="home">
+      <span>Домой</span>
+      <v-icon>home</v-icon>
+    </v-btn>
 
-        <v-btn color="rgb(0, 113, 185)" flat value="">
-            <span>Search</span>
-            <v-icon>search</v-icon>
-        </v-btn>
-    </v-bottom-nav>
+    <v-btn color="rgb(0, 113, 185)" flat value>
+      <span>Search</span>
+      <v-icon>search</v-icon>
+    </v-btn>
+
+    <v-btn color="rgb(0, 113, 185)" flat value="kanbanBoards">
+      <span>Kanban</span>
+      <v-icon>kanban</v-icon>
+    </v-btn>
+  </v-bottom-nav>
 </template>
 
 <script lang="ts">

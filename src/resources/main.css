@@ -17,10 +17,6 @@ body, input, select, textarea {
     font: normal 14px/1.4 OpenSans,Arial,sans-serif;
 }
 
-.navigation-container + .content-container {
-    margin-top: 48px;
-}
-
 .content-container {
     flex: 1;
 }
