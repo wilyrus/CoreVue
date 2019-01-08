@@ -15,8 +15,8 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import CardItem from './CardItem.vue';
-import CardsState from './CardStore';
+import CardItem from './KanbanCard.vue';
+import CardsState from './KanbanStore';
 import { TweenLite } from 'gsap';
 
 export default Vue.extend({

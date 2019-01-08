@@ -8,7 +8,8 @@ type BoardState = {
     title: string,
     description: string,
     date?: Date,
-    type: EventType
+    type: EventType,
+    id: Number
 };
 
 export interface BoardsState {
@@ -25,11 +26,13 @@ const store: BoardsStore = {
             {
                 title: 'Звонок',
                 description: 'Созвониться с А.А. по поводу требований к продукту',
+                id: 1,
                 type: EventType.call
             },
             {
                 title: 'Встреча',
                 description: 'Встреча с представителями компании С по поводу нового договора',
+                id: 2,
                 type: EventType.meet
             }
         ]
