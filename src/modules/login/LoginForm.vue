@@ -1,20 +1,20 @@
 <template>
-    <div class="form-container">
-        <div class="login-container">
-            <picture class="picture-container">
-                <source srcset="../../resources/logo.png">
-                <img src="../../resources/logo.png">
-            </picture>
-            <span class="login-title">Авторизация</span>
-            <div class="form-group">
-                <v-form v-model="valid" class="login-from">
-                    <v-text-field v-model="name" :rules="nameRules" :counter="10" label="Логин" required></v-text-field>
-                    <v-text-field v-model="email" :rules="emailRules" label="Пароль" required></v-text-field>
-                </v-form>
-                <v-btn v-on:click="navigateToHome" class="login-button" color="white">Войти</v-btn>
-            </div>
-        </div>
+  <div class="form-container">
+    <div class="login-container">
+      <picture class="picture-container">
+        <source srcset="../../assets/logo.png">
+        <img src="../../assets/logo.png">
+      </picture>
+      <span class="login-title">Авторизация</span>
+      <div class="form-group">
+        <v-form v-model="valid" class="login-from">
+          <v-text-field v-model="name" :rules="nameRules" :counter="10" label="Логин" required></v-text-field>
+          <v-text-field v-model="email" :rules="emailRules" label="Пароль" required></v-text-field>
+        </v-form>
+        <v-btn v-on:click="navigateToHome" class="login-button" color="white">Войти</v-btn>
+      </div>
     </div>
+  </div>
 </template>
 
 <script lang="ts">

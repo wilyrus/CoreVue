@@ -6,7 +6,7 @@ import BottomNavigation from './components/bottomNavigation/BottomNavigation.vue
 
 import Vuetify from 'vuetify';
 import 'vuetify/dist/vuetify.min.css';
-import './resources/main.css';
+import './assets/main.css';
 import 'material-design-icons-iconfont/dist/material-design-icons.css';
 
 Vue.use(Vuetify, {

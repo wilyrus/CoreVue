@@ -1,7 +1,7 @@
 <template>
   <div class="profile-page">
     <v-avatar :tile="tile" :size="120" color="grey lighten-4">
-      <img src="../../resources/avatar.jpg" alt="avatar">
+      <img src="../../assets/avatar.jpg" alt="avatar">
     </v-avatar>
     <v-form class="profile-form" ref="form" v-model="valid" lazy-validation>
       <v-text-field v-model="name" label="Имя" readonly="true"></v-text-field>

@@ -129,8 +129,8 @@ module.exports = {
         new VueLoaderPlugin(),
         new CopyWebpackPlugin([
             {
-                from: path.resolve(__dirname, 'src/resources'),
-                to: path.resolve(__dirname, 'dist/resources')
+                from: path.resolve(__dirname, 'src/assets'),
+                to: path.resolve(__dirname, 'dist/assets')
             }
         ])
     ],
