@@ -1,20 +1,25 @@
 <template>
-  <transition-group
-    appear
-    v-on:before-enter="beforeEnter"
-    v-on:enter="enter"
-    tag="div"
-    class="content__list"
-  >
-    <template v-for="item in cards">
-      <kanban-card-container :key="item.name" v-bind:card="item"></kanban-card-container>
-    </template>
-  </transition-group>
+  <draggable v-model="cards">
+    <transition-group
+      appear
+      v-on:before-enter="beforeEnter"
+      v-on:enter="enter"
+      tag="div"
+      class="content__list"
+      name="company"
+    >
+      <span>sadf</span>
+      <template v-for="item in cards">
+        <card-item :key="item.name" v-bind:card="item"></card-item>
+      </template>
+    </transition-group>
+  </draggable>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-import KanbanCardContainer from './KanbanCardContainer.vue';
+import draggable from 'vuedraggable';
+import CardItem from './KanbanCard.vue';
 import CardsState from './KanbanStore';
 import { TweenLite } from 'gsap';
 
@@ -23,6 +28,9 @@ export default Vue.extend({
         presentationDelay: 4
     }),
     computed: {
+        get(): any {
+            return this.$store.state.CardStore.cards;
+        },
         cards(): any {
             return this.$store.state.CardStore.cards;
         },
@@ -31,7 +39,8 @@ export default Vue.extend({
         }
     },
     components: {
-        KanbanCardContainer
+        CardItem,
+        draggable
     },
     methods: {
         beforeEnter(el: HTMLElement) {
@@ -57,10 +66,9 @@ export default Vue.extend({
 .content__list {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
     padding: 15px;
-    box-shadow: 0 7px 10px rgba(0, 0, 0, 0.08), 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="card-container" v-on:click="navigateToUrl">
+  <div class="kanban-card" v-on:click="navigateToUrl">
     <div class="icon-content">
       <v-icon class="card-container__icon" x-large color="#0071b9">{{card.icon}}</v-icon>
       <v-badge overlap color="red">

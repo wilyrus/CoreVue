@@ -1,7 +1,7 @@
 <template>
   <div class="some-body">
     <v-list three-line>
-      <v-list-tile v-on:click="navigateToBoard" v-for="item in boards" :key="item.title" avatar>
+      <v-list-tile @click="navigateToBoard(item)" v-for="item in boards" :key="item.title" avatar>
         <v-list-tile-avatar>
           <img :src="item.avatar">
         </v-list-tile-avatar>
@@ -30,8 +30,8 @@ export default Vue.extend({
     },
 
     methods: {
-        navigateToBoard(): any {
-            console.log(123);
+        navigateToBoard(item: any): any {
+            this.$router.push(`/kanbanBoards/${item.id}`);
         }
     }
 });

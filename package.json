@@ -29,7 +29,7 @@
     "url-loader": "^1.1.2",
     "vue-loader": "^15.5.1",
     "vue-style-loader": "^4.1.2",
-    "webpack": "^4.28.3",
+    "webpack": "^4.28.4",
     "webpack-cli": "^3.2.1",
     "webpack-dev-server": "^3.1.14"
   },
@@ -39,6 +39,7 @@
     "vue": "^2.5.21",
     "vue-router": "^3.0.2",
     "vue-template-compiler": "^2.5.21",
+    "vuedraggable": "^2.17.0",
     "vuetify": "^1.4.1",
     "vuex": "^3.0.1"
   }
