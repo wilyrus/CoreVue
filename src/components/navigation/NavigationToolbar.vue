@@ -1,11 +1,32 @@
 <template>
-  <div class="navigation-container" color="blue" v-if="show">
-    <v-btn :disabled="!showBackButton" v-on:click="navigateBack" flat icon color="white">
-      <v-icon v-show="showBackButton" medium color="black">keyboard_arrow_left</v-icon>
+  <div
+    class="navigation-container"
+    color="blue"
+    v-if="show"
+  >
+    <v-btn
+      :disabled="!showBackButton"
+      v-on:click="navigateBack"
+      flat
+      icon
+      color="white"
+    >
+      <v-icon
+        v-show="showBackButton"
+        medium
+        color="black"
+      >keyboard_arrow_left</v-icon>
     </v-btn>
     <span class="navigation-title">{{navigationTitle}}</span>
-    <v-btn flat icon color="white">
-      <v-icon medium color="black">search</v-icon>
+    <v-btn
+      flat
+      icon
+      color="white"
+    >
+      <v-icon
+        medium
+        color="black"
+      >search</v-icon>
     </v-btn>
   </div>
 </template>
@@ -31,9 +52,13 @@ export default Vue.extend({
     data() {
         return {
             show: false,
-            showBackButton: false,
-            navigationTitle: ''
+            showBackButton: false
         };
+    },
+    computed: {
+        navigationTitle(): string {
+            return this.$store.state.navigationTitle;
+        }
     },
     methods: {
         navigateBack() {

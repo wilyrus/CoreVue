@@ -8,6 +8,7 @@
       class="cardsContainer"
       name="company"
     >
+      <span></span>
       <template v-for="item in cards">
         <card-item
           :key="item.name"
@@ -64,12 +65,11 @@ export default Vue.extend({
 </script>
 
 <style>
-.dashboard-title {
-    font-size: 1.5em;
-}
 .cardsContainer {
     display: flex;
     flex-direction: column;
+    margin: 15px;
     padding: 15px;
+    box-shadow: 0 7px 10px rgba(0, 0, 0, 0.08), 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 </style>

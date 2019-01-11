@@ -26,7 +26,12 @@ const store = new Vuex.Store({
         KanbanStore
     },
     state: {
-        navigationTitle
+        navigationTitle: ''
+    },
+    mutations: {
+        updateNavigationTitle(state, newNavigationTitle) {
+            state.navigationTitle = newNavigationTitle;
+        }
     }
 });
 
