@@ -4,10 +4,14 @@
     v-on:before-enter="beforeEnter"
     v-on:enter="enter"
     tag="div"
-    class="content__list"
+    class="board_container"
   >
-    <template v-for="item in cards">
-      <kanban-card-container :key="item.name" v-bind:card="item"></kanban-card-container>
+    <span key='title'>{{projectName}}</span>
+    <template v-for="item in columns">
+      <kanban-card-container
+        :key="item.id"
+        v-bind:card="item"
+      ></kanban-card-container>
     </template>
   </transition-group>
 </template>
@@ -15,7 +19,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import KanbanCardContainer from './KanbanCardContainer.vue';
-import CardsState from './KanbanStore';
+import { KanbanProject } from './KanbanStore';
 import { TweenLite } from 'gsap';
 
 export default Vue.extend({
@@ -23,11 +27,14 @@ export default Vue.extend({
         presentationDelay: 4
     }),
     computed: {
-        cards(): any {
-            return this.$store.state.CardStore.cards;
+        project(): any {
+            return this.$store.state.KanbanStore.projects.find((project: KanbanProject) => project.id === parseInt(this.$route.params.id));
         },
-        title(): string {
-            return this.$store.state.CardStore.title;
+        projectName(): void {
+            this.$store.commit('updateNavigationTitle', this.project.name);
+        },
+        columns(): any {
+            return this.project.columns;
         }
     },
     components: {
@@ -51,15 +58,9 @@ export default Vue.extend({
 </script>
 
 <style>
-.dashboard-title {
-    font-size: 1.5em;
-}
-.content__list {
+.board_container {
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
+    flex-direction: row;
     padding: 15px;
     box-shadow: 0 7px 10px rgba(0, 0, 0, 0.08), 0 5px 15px rgba(0, 0, 0, 0.2);
 }

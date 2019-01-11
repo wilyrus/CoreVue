@@ -24,6 +24,9 @@ const store = new Vuex.Store({
         ChatStore,
         DashboardStore,
         KanbanStore
+    },
+    state: {
+        navigationTitle
     }
 });
 

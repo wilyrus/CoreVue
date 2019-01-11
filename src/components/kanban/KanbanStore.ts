@@ -1,39 +1,66 @@
-enum EventType {
-    call = "phone",
-    meet = "people",
-    another = "calendar_today"
-}
+type ColumnType = {
+    id: number,
+    title: string
+};
 
-type BoardState = {
-    title: string,
+type ProjectsColumns = Array<ColumnType>;
+
+export type KanbanProject = {
+    name: string,
     description: string,
     date?: Date,
-    type: EventType,
-    id: Number
+    id: Number,
+    columns: ProjectsColumns
 };
 
-export interface BoardsState {
-    boards: Array<BoardState>;
+export interface ProjectsState {
+    projects: Array<KanbanProject>;
 }
 
-type BoardsStore = {
-    state: BoardsState
+type ProjectsStore = {
+    state: ProjectsState
 };
 
-const store: BoardsStore = {
+const store: ProjectsStore = {
     state: {
-        boards: [
+        projects: [
             {
-                title: 'Звонок',
+                name: 'Разработка списка',
                 description: 'Созвониться с А.А. по поводу требований к продукту',
                 id: 1,
-                type: EventType.call
+                columns: [
+                    {
+                        id: 1,
+                        title: 'Старт'
+                    },
+                    {
+                        id: 2,
+                        title: 'В работе'
+                    },
+                    {
+                        id: 3,
+                        title: 'Завершено'
+                    }
+                ]
             },
             {
-                title: 'Встреча',
+                name: 'Разработка канбана',
                 description: 'Встреча с представителями компании С по поводу нового договора',
                 id: 2,
-                type: EventType.meet
+                columns: [
+                    {
+                        id: 1,
+                        title: 'Старт'
+                    },
+                    {
+                        id: 2,
+                        title: 'В работе'
+                    },
+                    {
+                        id: 3,
+                        title: 'Завершено'
+                    }
+                ]
             }
         ]
     }

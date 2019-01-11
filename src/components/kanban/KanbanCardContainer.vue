@@ -5,12 +5,14 @@
       v-on:before-enter="beforeEnter"
       v-on:enter="enter"
       tag="div"
-      class="content__list"
+      class="cardsContainer"
       name="company"
     >
-      <span>sadf</span>
       <template v-for="item in cards">
-        <card-item :key="item.name" v-bind:card="item"></card-item>
+        <card-item
+          :key="item.name"
+          v-bind:card="item"
+        ></card-item>
       </template>
     </transition-group>
   </draggable>
@@ -28,11 +30,13 @@ export default Vue.extend({
         presentationDelay: 4
     }),
     computed: {
-        get(): any {
-            return this.$store.state.CardStore.cards;
-        },
-        cards(): any {
-            return this.$store.state.CardStore.cards;
+        cards: {
+            get(): any {
+                return this.$store.state.CardStore.cards;
+            },
+            set(value: any) {
+                this.$store.commit('updateList', value);
+            }
         },
         title(): string {
             return this.$store.state.CardStore.title;
@@ -63,12 +67,9 @@ export default Vue.extend({
 .dashboard-title {
     font-size: 1.5em;
 }
-.content__list {
+.cardsContainer {
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
+    flex-direction: column;
     padding: 15px;
 }
 </style>
