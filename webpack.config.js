@@ -1,6 +1,5 @@
 const path = require('path');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const UglifyJSPlugin = require('terser-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const GRAPHICS_LIMIT = 1000000;
@@ -123,14 +122,15 @@ module.exports = {
         ]
     },
     plugins: [
-        new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, 'index.html')
-        }),
         new VueLoaderPlugin(),
         new CopyWebpackPlugin([
             {
                 from: path.resolve(__dirname, 'src/assets'),
                 to: path.resolve(__dirname, 'dist/assets')
+            },
+            {
+                from: path.resolve(__dirname, 'src/index.html'),
+                to: path.resolve(__dirname, 'dist/index.html')
             }
         ])
     ],
