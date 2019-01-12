@@ -7,10 +7,11 @@
     class="board_container"
   >
     <span key='title'>{{projectName}}</span>
-    <template v-for="item in columns">
+    <template v-for="column in columns">
       <kanban-card-container
-        :key="item.id"
-        v-bind:card="item"
+        :key="column.id"
+        :column="column"
+        class="kanban-card-container"
       ></kanban-card-container>
     </template>
   </transition-group>
@@ -63,5 +64,8 @@ export default Vue.extend({
     flex-direction: row;
     padding: 15px;
     box-shadow: 0 7px 10px rgba(0, 0, 0, 0.08), 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+.kanban-card-container {
+    position: relative;
 }
 </style>

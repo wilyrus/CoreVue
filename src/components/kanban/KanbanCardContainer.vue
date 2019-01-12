@@ -2,17 +2,14 @@
   <draggable v-model="cards">
     <transition-group
       appear
-      v-on:before-enter="beforeEnter"
-      v-on:enter="enter"
-      tag="div"
+      tag="v-card"
       class="cardsContainer"
-      name="company"
     >
-      <span></span>
-      <template v-for="item in cards">
+      <v-card-title :key='title'><span class="title font-weight-light">{{title}}</span></v-card-title>
+      <template v-for="card in cards">
         <card-item
-          :key="item.name"
-          v-bind:card="item"
+          :key="card.title"
+          :card="card"
         ></card-item>
       </template>
     </transition-group>
@@ -27,39 +24,17 @@ import CardsState from './KanbanStore';
 import { TweenLite } from 'gsap';
 
 export default Vue.extend({
-    data: () => ({
-        presentationDelay: 4
-    }),
-    computed: {
-        cards: {
-            get(): any {
-                return this.$store.state.CardStore.cards;
-            },
-            set(value: any) {
-                this.$store.commit('updateList', value);
-            }
-        },
-        title(): string {
-            return this.$store.state.CardStore.title;
-        }
+    data() {
+        return {
+            presentationDelay: 4,
+            cards: this.column.cards,
+            title: this.column.title
+        };
     },
+    props: ['column'],
     components: {
         CardItem,
         draggable
-    },
-    methods: {
-        beforeEnter(el: HTMLElement) {
-            el.style.left = '50%';
-        },
-        enter(el: HTMLElement, done: Function) {
-            const delay = this.presentationDelay++ * 50;
-            setTimeout(() => {
-                TweenLite.to(el, 0.25, {
-                    left: 0,
-                    onComplete: done
-                });
-            }, delay);
-        }
     }
 });
 </script>

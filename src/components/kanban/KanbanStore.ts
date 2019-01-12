@@ -1,6 +1,12 @@
+type KanbanCard = {
+    id: Number,
+    title: String
+};
+
 type ColumnType = {
     id: number,
-    title: string
+    title: string,
+    cards: Array<KanbanCard>
 };
 
 type ProjectsColumns = Array<ColumnType>;
@@ -31,15 +37,57 @@ const store: ProjectsStore = {
                 columns: [
                     {
                         id: 1,
-                        title: 'Старт'
+                        title: 'Старт',
+                        cards: [
+                            {
+                                id: 1,
+                                title: '1 задание старта'
+                            },
+                            {
+                                id: 2,
+                                title: '2 задание старта'
+                            },
+                            {
+                                id: 3,
+                                title: '3 задание старта'
+                            }
+                        ]
                     },
                     {
                         id: 2,
-                        title: 'В работе'
+                        title: 'В работе',
+                        cards: [
+                            {
+                                id: 1,
+                                title: '1 задание в работе'
+                            },
+                            {
+                                id: 2,
+                                title: '2 задание в работе'
+                            },
+                            {
+                                id: 3,
+                                title: '3 задание в работе'
+                            }
+                        ]
                     },
                     {
                         id: 3,
-                        title: 'Завершено'
+                        title: 'Завершено',
+                        cards: [
+                            {
+                                id: 1,
+                                title: '1 завершенное задание'
+                            },
+                            {
+                                id: 2,
+                                title: '2 завершенное задание'
+                            },
+                            {
+                                id: 3,
+                                title: '3 завершенное задание'
+                            }
+                        ]
                     }
                 ]
             },
@@ -50,15 +98,33 @@ const store: ProjectsStore = {
                 columns: [
                     {
                         id: 1,
-                        title: 'Старт'
+                        title: 'Старт',
+                        cards: [
+                            {
+                                id: 1,
+                                title: 'Старт'
+                            }
+                        ]
                     },
                     {
                         id: 2,
-                        title: 'В работе'
+                        title: 'В работе',
+                        cards: [
+                            {
+                                id: 1,
+                                title: 'Старт'
+                            }
+                        ]
                     },
                     {
                         id: 3,
-                        title: 'Завершено'
+                        title: 'Завершено',
+                        cards: [
+                            {
+                                id: 1,
+                                title: 'Старт'
+                            }
+                        ]
                     }
                 ]
             }
