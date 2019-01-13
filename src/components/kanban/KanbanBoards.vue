@@ -17,16 +17,8 @@
         </v-list-tile-content>
       </v-list-tile>
     </v-list>
-    <v-btn
-      color="blue"
-      dark
-      fab
-      fixed
-      bottom
-      right
-    >
-      <v-icon>plus</v-icon>
-      <v-icon>close</v-icon>
+    <v-btn color="blue" dark fab fixed bottom right>
+      <v-icon>add</v-icon>
     </v-btn>
   </div>
 </template>

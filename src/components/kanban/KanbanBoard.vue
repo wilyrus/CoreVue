@@ -6,13 +6,9 @@
     tag="div"
     class="board_container"
   >
-    <span key='title'>{{projectName}}</span>
+    <span key="title">{{projectName}}</span>
     <template v-for="column in columns">
-      <kanban-card-container
-        :key="column.id"
-        :column="column"
-        class="kanban-card-container"
-      ></kanban-card-container>
+      <kanban-card-container :key="column.id" :column="column" class="kanban-card-container"></kanban-card-container>
     </template>
   </transition-group>
 </template>

@@ -1,16 +1,25 @@
 <template>
   <draggable v-model="cards">
-    <transition-group
-      appear
-      tag="v-card"
-      class="cardsContainer"
-    >
-      <v-card-title :key='title'><span class="title font-weight-light">{{title}}</span></v-card-title>
+    <transition-group appear tag="v-card" class="cardsContainer">
+      <v-card-title :key="title">
+        <span class="title font-weight-light">{{title}}</span>
+        <v-btn flat fab small>
+          <v-icon>add</v-icon>
+        </v-btn>
+        <v-menu>
+          <v-btn slot="activator" icon>
+            <v-icon>more_vert</v-icon>
+          </v-btn>
+
+          <v-list>
+            <v-list-tile v-for="(item, i) in items" :key="i">
+              <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+            </v-list-tile>
+          </v-list>
+        </v-menu>
+      </v-card-title>
       <template v-for="card in cards">
-        <card-item
-          :key="card.title"
-          :card="card"
-        ></card-item>
+        <card-item :key="card.title" :card="card"></card-item>
       </template>
     </transition-group>
   </draggable>
@@ -28,7 +37,12 @@ export default Vue.extend({
         return {
             presentationDelay: 4,
             cards: this.column.cards,
-            title: this.column.title
+            title: this.column.title,
+            items: [
+                {
+                    title: 'add'
+                }
+            ]
         };
     },
     props: ['column'],
