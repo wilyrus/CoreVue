@@ -17,7 +17,10 @@
         color="black"
       >keyboard_arrow_left</v-icon>
     </v-btn>
-    <span class="navigation-title">{{navigationTitle}}</span>
+    <span
+      dark
+      class="navigation-title"
+    >{{navigationTitle}}</span>
     <v-btn
       flat
       icon

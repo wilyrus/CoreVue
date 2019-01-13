@@ -1,5 +1,10 @@
 <template>
-  <v-card class="mx-auto" color="#26c6da" dark max-width="400">
+  <v-card
+    class="mx-auto"
+    color="#26c6da"
+    dark
+    max-width="400"
+  >
     <v-card-title>
       <span class="title font-weight-light">{{card.title}}</span>
     </v-card-title>
@@ -19,7 +24,10 @@
           <v-list-tile-title>Evan You</v-list-tile-title>
         </v-list-tile-content>
 
-        <v-layout align-center justify-end>
+        <v-layout
+          align-center
+          justify-end
+        >
           <v-icon class="mr-1">mdi-heart</v-icon>
           <span class="subheading mr-2">256</span>
           <span class="mr-1">·</span>
@@ -35,14 +43,7 @@
 import Vue from 'vue';
 
 export default Vue.extend({
-    props: ['card'],
-    methods: {
-        navigateToUrl() {
-            if (this.card.url) {
-                this.$router.push(this.card.url);
-            }
-        }
-    }
+    props: ['card']
 });
 </script>
 
