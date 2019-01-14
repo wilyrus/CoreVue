@@ -3,14 +3,7 @@ html, body {
     height: 100%;
     min-width: 100%;
     color: rgb(64, 64, 64);
-}
-
-body {
-    /*background-image: url('./bg.jpg')*/
-}
-
-#vue-app {
-    height: 100%;
+    overflow: hidden;
 }
 
 body, input, select, textarea {

@@ -1,37 +1,17 @@
 <template>
-  <div
-    class="navigation-container"
-    color="blue"
-    v-if="show"
-  >
-    <v-btn
-      :disabled="!showBackButton"
-      v-on:click="navigateBack"
-      flat
-      icon
-      color="white"
-    >
-      <v-icon
-        v-show="showBackButton"
-        medium
-        color="black"
-      >keyboard_arrow_left</v-icon>
-    </v-btn>
-    <span
-      dark
-      class="navigation-title"
-    >{{navigationTitle}}</span>
-    <v-btn
-      flat
-      icon
-      color="white"
-    >
-      <v-icon
-        medium
-        color="black"
-      >search</v-icon>
-    </v-btn>
-  </div>
+  <nav>
+    <v-toolbar dark color="blue" app>
+      <v-toolbar-side-icon dark @click="toggleDrawer" color="white"></v-toolbar-side-icon>
+      <v-spacer></v-spacer>
+      <v-toolbar-title>{{navigationTitle}}</v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-btn flat icon>
+        <v-icon>search</v-icon>
+      </v-btn>
+    </v-toolbar>
+
+    <v-navigation-drawer app v-model="drawer"></v-navigation-drawer>
+  </nav>
 </template>
 
 <script lang="ts">
@@ -55,7 +35,8 @@ export default Vue.extend({
     data() {
         return {
             show: false,
-            showBackButton: false
+            showBackButton: false,
+            drawer: false
         };
     },
     computed: {
@@ -75,6 +56,9 @@ export default Vue.extend({
             }
             this.showBackButton = true;
             this.navigationTitle = routingTitles[this.$route.name || ''] || '';
+        },
+        toggleDrawer() {
+            this.drawer = !this.drawer;
         }
     },
     created() {
@@ -87,20 +71,3 @@ export default Vue.extend({
     }
 });
 </script>
-
-<style>
-.navigation-container {
-    top: 0;
-    background-color: #2196f3 !important;
-    z-index: 10;
-    width: 100%;
-    background-color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-}
-.navigation-title {
-    font-size: 1.5em;
-}
-</style>

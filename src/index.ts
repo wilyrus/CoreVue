@@ -23,9 +23,11 @@ export default new Vue({
     template: `
   <v-app class="body-container">
   <NavigationToolbar/>
+  <v-content>
   <transition name="slide-fade">
-  <router-view class="content-container"></router-view>
+  <router-view></router-view>
   </transition>
+  </v-content>
   <BottomNavigation/>
 </v-app>
   `,
