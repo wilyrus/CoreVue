@@ -25,7 +25,7 @@ export default Vue.extend({
     }),
     computed: {
         project(): any {
-            return this.$store.state.KanbanStore.projects.find((project: KanbanProject) => project.id === parseInt(this.$route.params.id));
+            return this.$store.state.KanbanStore.projects.find((project: KanbanProject) => project.id === this.$route.params.id);
         },
         projectName(): void {
             this.$store.commit('updateNavigationTitle', this.project.name);

@@ -18,7 +18,7 @@
         </v-list>
       </v-menu>
     </v-card-title>
-    <draggable v-model="cards" key="someKey" @end="onEnd" :options="{group:'cards'}">
+    <draggable v-model="cards" key="someKey" @change="onChange" :options="{group:'cards'}">
       <template v-for="card in cards">
         <card-item :key="card.title" :card="card"></card-item>
       </template>
@@ -51,11 +51,14 @@ export default Vue.extend({
         addCard() {
             this.$router.push({ name: 'KanbanCardCreation', params: { id: this.column.id } });
         },
-        onEnd(v: any) {
-            debugger;
-        },
-        onAdd(v: any) {
-            debugger;
+        onChange(changes: any) {
+            Object.keys(changes).forEach(change =>
+                this.$store.state.KanbanStore.dispatch(`${change}Card`, {
+                    columnId: this.column.id,
+                    card: changes[change].element,
+                    index: changes[change].newIndex
+                })
+            );
         }
     },
     components: {

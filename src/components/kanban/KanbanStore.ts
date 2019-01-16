@@ -15,7 +15,7 @@ export type KanbanProject = {
     name: string,
     description: string,
     date?: Date,
-    id: Number,
+    id: String,
     columns: ProjectsColumns
 };
 
@@ -24,7 +24,8 @@ export interface ProjectsState {
 }
 
 type ProjectsStore = {
-    state: ProjectsState
+    state: ProjectsState,
+    mutations: any
 };
 
 const store: ProjectsStore = {
@@ -33,7 +34,7 @@ const store: ProjectsStore = {
             {
                 name: 'Разработка списка',
                 description: 'Созвониться с А.А. по поводу требований к продукту',
-                id: 1,
+                id: 'project.1',
                 columns: [
                     {
                         id: 1,
@@ -94,7 +95,7 @@ const store: ProjectsStore = {
             {
                 name: 'Разработка канбана',
                 description: 'Встреча с представителями компании С по поводу нового договора',
-                id: 2,
+                id: 'project.2',
                 columns: [
                     {
                         id: 1,
@@ -129,6 +130,16 @@ const store: ProjectsStore = {
                 ]
             }
         ]
+    },
+    mutations: {
+        /*
+        addedCard(state: ProjectsState, draggableContext) {
+            state.projects[draggableContext.toProjectId][draggableContext.toColumnId] = state.projects[draggableContext.projectId][draggableContext.toColumnId];
+        },
+        removedCard(state: ProjectsState, draggableContext) {
+            state.projects[draggableContext.toProjectId][draggableContext.toColumnId] = state.projects[draggableContext.projectId][draggableContext.toColumnId];
+        }
+        */
     }
 };
 
