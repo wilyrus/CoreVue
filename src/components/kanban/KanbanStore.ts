@@ -58,15 +58,15 @@ const store: ProjectsStore = {
                         title: 'В работе',
                         cards: [
                             {
-                                id: 1,
+                                id: 11,
                                 title: '1 задание в работе'
                             },
                             {
-                                id: 2,
+                                id: 22,
                                 title: '2 задание в работе'
                             },
                             {
-                                id: 3,
+                                id: 33,
                                 title: '3 задание в работе'
                             }
                         ]
@@ -76,15 +76,15 @@ const store: ProjectsStore = {
                         title: 'Завершено',
                         cards: [
                             {
-                                id: 1,
+                                id: 111,
                                 title: '1 завершенное задание'
                             },
                             {
-                                id: 2,
+                                id: 222,
                                 title: '2 завершенное задание'
                             },
                             {
-                                id: 3,
+                                id: 333,
                                 title: '3 завершенное задание'
                             }
                         ]
