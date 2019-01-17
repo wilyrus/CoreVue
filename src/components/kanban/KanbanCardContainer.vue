@@ -46,17 +46,18 @@ export default Vue.extend({
             ]
         };
     },
-    props: ['column'],
+    props: ['column', 'projectId'],
     methods: {
         addCard() {
             this.$router.push({ name: 'KanbanCardCreation', params: { id: this.column.id } });
         },
         onChange(changes: any) {
             Object.keys(changes).forEach(change =>
-                this.$store.state.KanbanStore.dispatch(`${change}Card`, {
+                this.$store.commit(`${change}Card`, {
                     columnId: this.column.id,
                     card: changes[change].element,
-                    index: changes[change].newIndex
+                    index: changes[change].newIndex,
+                    projectId: this.projectId
                 })
             );
         }

@@ -8,7 +8,12 @@
   >
     <span key="title">{{projectName}}</span>
     <template v-for="column in columns">
-      <kanban-card-container :key="column.id" :column="column" class="kanban-card-container"></kanban-card-container>
+      <kanban-card-container
+        :projectId="project.id"
+        :key="column.id"
+        :column="column"
+        class="kanban-card-container"
+      ></kanban-card-container>
     </template>
   </transition-group>
 </template>

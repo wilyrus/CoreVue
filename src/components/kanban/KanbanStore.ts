@@ -1,21 +1,28 @@
 type KanbanCard = {
-    id: Number,
-    title: String
+    id: string,
+    title: string
 };
 
 type ColumnType = {
-    id: number,
+    id: string,
     title: string,
     cards: Array<KanbanCard>
 };
 
 type ProjectsColumns = Array<ColumnType>;
 
+type MoveContext = {
+    columnId: string,
+    index: number,
+    card: KanbanCard,
+    projectId: string
+};
+
 export type KanbanProject = {
     name: string,
     description: string,
     date?: Date,
-    id: String,
+    id: string,
     columns: ProjectsColumns
 };
 
@@ -37,55 +44,55 @@ const store: ProjectsStore = {
                 id: 'project.1',
                 columns: [
                     {
-                        id: 1,
+                        id: 'column.1',
                         title: 'Старт',
                         cards: [
                             {
-                                id: 1,
+                                id: 'card.1',
                                 title: '1 задание старта'
                             },
                             {
-                                id: 2,
+                                id: 'card.2',
                                 title: '2 задание старта'
                             },
                             {
-                                id: 3,
+                                id: 'card.3',
                                 title: '3 задание старта'
                             }
                         ]
                     },
                     {
-                        id: 2,
+                        id: 'column.2',
                         title: 'В работе',
                         cards: [
                             {
-                                id: 11,
+                                id: 'card.11',
                                 title: '1 задание в работе'
                             },
                             {
-                                id: 22,
+                                id: 'card.22',
                                 title: '2 задание в работе'
                             },
                             {
-                                id: 33,
+                                id: 'card.33',
                                 title: '3 задание в работе'
                             }
                         ]
                     },
                     {
-                        id: 3,
+                        id: 'column.3',
                         title: 'Завершено',
                         cards: [
                             {
-                                id: 111,
+                                id: 'card.111',
                                 title: '1 завершенное задание'
                             },
                             {
-                                id: 222,
+                                id: 'card.222',
                                 title: '2 завершенное задание'
                             },
                             {
-                                id: 333,
+                                id: 'card.333',
                                 title: '3 завершенное задание'
                             }
                         ]
@@ -98,31 +105,31 @@ const store: ProjectsStore = {
                 id: 'project.2',
                 columns: [
                     {
-                        id: 1,
+                        id: 'column.4',
                         title: 'Старт',
                         cards: [
                             {
-                                id: 1,
+                                id: 'card.4',
                                 title: 'Старт'
                             }
                         ]
                     },
                     {
-                        id: 2,
+                        id: 'cloumn.5',
                         title: 'В работе',
                         cards: [
                             {
-                                id: 1,
+                                id: 'card.5',
                                 title: 'Старт'
                             }
                         ]
                     },
                     {
-                        id: 3,
+                        id: 'column.6',
                         title: 'Завершено',
                         cards: [
                             {
-                                id: 1,
+                                id: 'card.6',
                                 title: 'Старт'
                             }
                         ]
@@ -132,14 +139,24 @@ const store: ProjectsStore = {
         ]
     },
     mutations: {
-        /*
-        addedCard(state: ProjectsState, draggableContext) {
-            state.projects[draggableContext.toProjectId][draggableContext.toColumnId] = state.projects[draggableContext.projectId][draggableContext.toColumnId];
+        addedCard(state: ProjectsState, draggableContext: MoveContext) {
+            const project = state.projects.find(pr => pr.id === draggableContext.projectId);
+            if (project) {
+                const column = project.columns.find(cl => cl.id === draggableContext.columnId);
+                if (column) {
+                    column.cards.splice(draggableContext.index, 0, draggableContext.card);
+                }
+            }
         },
-        removedCard(state: ProjectsState, draggableContext) {
-            state.projects[draggableContext.toProjectId][draggableContext.toColumnId] = state.projects[draggableContext.projectId][draggableContext.toColumnId];
+        removedCard(state: ProjectsState, draggableContext: MoveContext) {
+            const project = state.projects.find(pr => pr.id === draggableContext.projectId);
+            if (project) {
+                const column = project.columns.find(cl => cl.id === draggableContext.columnId);
+                if (column) {
+                    column.cards.splice(draggableContext.index, 1, draggableContext.card);
+                }
+            }
         }
-        */
     }
 };
 
