@@ -1,6 +1,7 @@
 type KanbanCard = {
     id: string,
-    title: string
+    title: string,
+    description?: string
 };
 
 type ColumnType = {
@@ -33,6 +34,13 @@ export interface ProjectsState {
 type ProjectsStore = {
     state: ProjectsState,
     mutations: any
+};
+
+type NewCardContext = {
+    projectId: string,
+    name: string,
+    description: string,
+    columnId: string
 };
 
 const store: ProjectsStore = {
@@ -141,8 +149,10 @@ const store: ProjectsStore = {
     mutations: {
         addedCard(state: ProjectsState, draggableContext: MoveContext) {
             const project = state.projects.find(pr => pr.id === draggableContext.projectId);
+
             if (project) {
                 const column = project.columns.find(cl => cl.id === draggableContext.columnId);
+
                 if (column) {
                     column.cards.splice(draggableContext.index, 0, draggableContext.card);
                 }
@@ -150,10 +160,23 @@ const store: ProjectsStore = {
         },
         removedCard(state: ProjectsState, draggableContext: MoveContext) {
             const project = state.projects.find(pr => pr.id === draggableContext.projectId);
+
             if (project) {
                 const column = project.columns.find(cl => cl.id === draggableContext.columnId);
+
                 if (column) {
                     column.cards.splice(draggableContext.index, 1, draggableContext.card);
+                }
+            }
+        },
+        addNewCard(state: ProjectsState, draggableContext: NewCardContext) {
+            const project = state.projects.find(pr => pr.id === draggableContext.projectId);
+
+            if (project) {
+                const column = project.columns.find(cl => cl.id === draggableContext.columnId);
+
+                if (column) {
+                    column.cards.push({ title: draggableContext.name, id: `card${column.cards.length + 1}`, description: draggableContext.description });
                 }
             }
         }

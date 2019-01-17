@@ -6,7 +6,6 @@
     tag="div"
     class="board_container"
   >
-    <span key="title">{{projectName}}</span>
     <template v-for="column in columns">
       <kanban-card-container
         :projectId="project.id"
@@ -15,12 +14,19 @@
         class="kanban-card-container"
       ></kanban-card-container>
     </template>
+    <kanban-card-container-new
+      :projectId="project.id"
+      key="columnAdder"
+      class="kanban-card-container"
+    ></kanban-card-container-new>
   </transition-group>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
 import KanbanCardContainer from './KanbanCardContainer.vue';
+import KanbanCardContainerNew from './KanbanCardContainerNew.vue';
+
 import { KanbanProject } from './KanbanStore';
 import { TweenLite } from 'gsap';
 
@@ -30,7 +36,7 @@ export default Vue.extend({
     }),
     computed: {
         project(): any {
-            return this.$store.state.KanbanStore.projects.find((project: KanbanProject) => project.id === this.$route.params.id);
+            return this.$store.state.KanbanStore.projects.find((project: KanbanProject) => project.id === this.$route.params.projectId);
         },
         projectName(): void {
             this.$store.commit('updateNavigationTitle', this.project.name);
@@ -40,7 +46,8 @@ export default Vue.extend({
         }
     },
     components: {
-        KanbanCardContainer
+        KanbanCardContainer,
+        KanbanCardContainerNew
     },
     methods: {
         beforeEnter(el: HTMLElement) {

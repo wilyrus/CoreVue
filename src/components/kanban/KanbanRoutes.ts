@@ -10,12 +10,12 @@ const KanbanRoutes = [
     },
     {
         name: 'KanbanBoard',
-        path: '/kanbanBoards/:id',
+        path: '/kanbanBoards/:projectId',
         component: KanbanBoard
     },
     {
         name: 'KanbanCardCreation',
-        path: '/kanbanBoards/:id/add',
+        path: '/kanbanBoards/:projectId/addTo/:columnId',
         component: KanbanCardCreator
     }
 ];

@@ -1,26 +1,53 @@
 <template>
-  <transition-group appear tag="v-card">
+  <transition-group
+    appear
+    tag="v-card"
+  >
     <v-card-title :key="title">
       <span class="title font-weight-light">{{title}}</span>
       <v-spacer></v-spacer>
-      <v-btn flat icon small @click="addCard">
+      <v-btn
+        flat
+        icon
+        small
+        @click="addCard"
+      >
         <v-icon>add</v-icon>
       </v-btn>
-      <v-menu bottom left>
-        <v-btn slot="activator" icon flat small>
+      <v-menu
+        bottom
+        left
+      >
+        <v-btn
+          slot="activator"
+          icon
+          flat
+          small
+        >
           <v-icon>more_vert</v-icon>
         </v-btn>
 
         <v-list>
-          <v-list-tile v-for="(item, i) in items" :key="i">
+          <v-list-tile
+            v-for="(item, i) in items"
+            :key="i"
+          >
             <v-list-tile-title>{{ item.title }}</v-list-tile-title>
           </v-list-tile>
         </v-list>
       </v-menu>
     </v-card-title>
-    <draggable v-model="cards" key="someKey" @change="onChange" :options="{group:'cards'}">
+    <draggable
+      v-model="cards"
+      key="someKey"
+      @change="onChange"
+      :options="{group:'cards'}"
+    >
       <template v-for="card in cards">
-        <card-item :key="card.title" :card="card"></card-item>
+        <card-item
+          :key="card.title"
+          :card="card"
+        ></card-item>
       </template>
     </draggable>
   </transition-group>
@@ -49,7 +76,7 @@ export default Vue.extend({
     props: ['column', 'projectId'],
     methods: {
         addCard() {
-            this.$router.push({ name: 'KanbanCardCreation', params: { id: this.column.id } });
+            this.$router.push({ name: 'KanbanCardCreation', params: { projectId: this.projectId, columnId: this.column.id } });
         },
         onChange(changes: any) {
             Object.keys(changes).forEach(change =>
