@@ -10,14 +10,16 @@ body, input, select, textarea {
     font: normal 14px/1.4 OpenSans,Arial,sans-serif;
 }
 
+.application {
+    height: 100%;
+    overflow: hidden;
+}
+.v-content {
+    overflow: auto;
+    height: 100%;
+}
 .content-container {
     flex: 1;
-}
-
-.body-container {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
 }
     .slide-fade-enter-active {
         transition: all .2s ease;

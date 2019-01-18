@@ -17,7 +17,6 @@
     <kanban-card-container-new
       :projectId="project.id"
       key="columnAdder"
-      class="kanban-card-container"
     ></kanban-card-container-new>
   </transition-group>
 </template>
@@ -71,10 +70,13 @@ export default Vue.extend({
     display: flex;
     flex-direction: row;
     padding: 15px;
+    height: 100%;
     box-shadow: 0 7px 10px rgba(0, 0, 0, 0.08), 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 .kanban-card-container {
     position: relative;
-    padding: 20px;
+    margin: 0 15px 15px 15px;
+    max-height: 100%;
+    overflow: auto;
 }
 </style>

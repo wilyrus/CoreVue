@@ -21,7 +21,7 @@ export default new Vue({
     },
     el: '#vue-app',
     template: `
-  <v-app class="body-container">
+  <v-app>
   <NavigationToolbar/>
   <v-content>
   <transition name="slide-fade">

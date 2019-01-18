@@ -1,12 +1,34 @@
 <template>
   <v-card
-    class="mx-auto"
+    class='column-card'
     color="#26c6da"
     dark
     max-width="400"
   >
     <v-card-title>
       <span class="title font-weight-light">{{card.title}}</span>
+      <v-menu
+        bottom
+        left
+      >
+        <v-btn
+          slot="activator"
+          icon
+          flat
+          small
+        >
+          <v-icon>more_vert</v-icon>
+        </v-btn>
+
+        <v-list>
+          <v-list-tile
+            v-for="(item, i) in items"
+            :key="i"
+          >
+            <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+          </v-list-tile>
+        </v-list>
+      </v-menu>
     </v-card-title>
 
     <v-card-text class="headline font-weight-bold">{{card.text}}</v-card-text>
@@ -43,9 +65,24 @@
 import Vue from 'vue';
 
 export default Vue.extend({
+    data() {
+        return {
+            items: [
+                {
+                    title: 'add'
+                }
+            ]
+        };
+    },
     props: ['card']
 });
 </script>
 
 <style>
+.column-card:first-child {
+    margin: 0 15px 15px 15px;
+}
+.column-card {
+    margin: 15px;
+}
 </style>
