@@ -47,9 +47,11 @@
 import Vue from 'vue';
 
 export default Vue.extend({
-    data: {
-        name: undefined,
-        description: undefined
+    data() {
+        return {
+            name: undefined,
+            description: undefined
+        };
     },
     created() {
         this.$store.commit('updateNavigationTitle', 'Новая карточка для ');

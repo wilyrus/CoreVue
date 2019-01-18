@@ -1,8 +1,5 @@
 <template>
-  <transition-group
-    appear
-    tag="v-card"
-  >
+  <v-card>
     <v-card-title :key="title">
       <span class="title font-weight-light">{{title}}</span>
       <v-spacer></v-spacer>
@@ -14,10 +11,7 @@
       >
         <v-icon>add</v-icon>
       </v-btn>
-      <v-menu
-        bottom
-        left
-      >
+      <v-menu>
         <v-btn
           slot="activator"
           icon
@@ -42,6 +36,7 @@
       key="someKey"
       @change="onChange"
       :options="{group:'cards'}"
+      class="column-wrp"
     >
       <template v-for="card in cards">
         <card-item
@@ -50,7 +45,7 @@
         ></card-item>
       </template>
     </draggable>
-  </transition-group>
+  </v-card>
 </template>
 
 <script lang="ts">
@@ -103,5 +98,8 @@ export default Vue.extend({
     margin: 15px;
     padding: 15px;
     box-shadow: 0 7px 10px rgba(0, 0, 0, 0.08), 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+.column-wrp {
+    overflow-y: auto;
 }
 </style>

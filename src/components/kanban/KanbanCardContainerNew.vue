@@ -6,15 +6,6 @@
   >
     <v-card-title>
       <span class="title font-weight-light">Add new column</span>
-      <v-spacer></v-spacer>
-      <v-btn
-        flat
-        icon
-        small
-        @click="addCard"
-      >
-        <v-icon>add</v-icon>
-      </v-btn>
     </v-card-title>
   </v-card>
 </template>

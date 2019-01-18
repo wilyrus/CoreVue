@@ -6,14 +6,22 @@
     tag="div"
     class="board_container"
   >
-    <template v-for="column in columns">
-      <kanban-card-container
-        :projectId="project.id"
-        :key="column.id"
-        :column="column"
-        class="kanban-card-container"
-      ></kanban-card-container>
-    </template>
+    <draggable
+      v-model="columns"
+      key="someKey"
+      @change="onChange"
+      :options="{group:'columns'}"
+      class="board_container"
+    >
+      <template v-for="column in columns">
+        <kanban-card-container
+          :projectId="project.id"
+          :key="column.id"
+          :column="column"
+          class="kanban-card-container"
+        ></kanban-card-container>
+      </template>
+    </draggable>
     <kanban-card-container-new
       :projectId="project.id"
       key="columnAdder"
@@ -25,6 +33,7 @@
 import Vue from 'vue';
 import KanbanCardContainer from './KanbanCardContainer.vue';
 import KanbanCardContainerNew from './KanbanCardContainerNew.vue';
+import draggable from 'vuedraggable';
 
 import { KanbanProject } from './KanbanStore';
 import { TweenLite } from 'gsap';
@@ -40,13 +49,17 @@ export default Vue.extend({
         projectName(): void {
             this.$store.commit('updateNavigationTitle', this.project.name);
         },
-        columns(): any {
-            return this.project.columns;
+        columns: {
+            get(): any {
+                return this.project.columns;
+            },
+            set() {}
         }
     },
     components: {
         KanbanCardContainer,
-        KanbanCardContainerNew
+        KanbanCardContainerNew,
+        draggable
     },
     methods: {
         beforeEnter(el: HTMLElement) {
@@ -60,7 +73,8 @@ export default Vue.extend({
                     onComplete: done
                 });
             }, delay);
-        }
+        },
+        onChange() {}
     }
 });
 </script>
@@ -77,6 +91,7 @@ export default Vue.extend({
     position: relative;
     margin: 0 15px 15px 15px;
     max-height: 100%;
-    overflow: auto;
+    display: flex !important;
+    flex-direction: column;
 }
 </style>
