@@ -4,7 +4,7 @@
     v-on:before-enter="beforeEnter"
     v-on:enter="enter"
     tag="div"
-    class="board_container"
+    class="board_wrp"
   >
     <draggable
       v-model="columns"
@@ -80,12 +80,16 @@ export default Vue.extend({
 </script>
 
 <style>
+.board_wrp {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    padding: 15px;
+}
 .board_container {
     display: flex;
     flex-direction: row;
-    padding: 15px;
     height: 100%;
-    box-shadow: 0 7px 10px rgba(0, 0, 0, 0.08), 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 .kanban-card-container {
     position: relative;

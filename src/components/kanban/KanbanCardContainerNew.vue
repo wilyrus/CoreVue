@@ -26,6 +26,8 @@ export default Vue.extend({
 
 <style>
 .column-adder {
-    height: 72px;
+    height: 52px;
+    margin: 0 15px 15px 15px;
+    cursor: pointer;
 }
 </style>

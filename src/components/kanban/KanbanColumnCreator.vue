@@ -1,5 +1,5 @@
 <template>
-  <v-card>
+  <v-card class='column-creator'>
     <v-card-text>
       <v-container grid-list-md>
         <v-layout wrap>
@@ -63,3 +63,9 @@ export default Vue.extend({
     }
 });
 </script>
+
+<style>
+.column-creator {
+    margin: 15px;
+}
+</style>

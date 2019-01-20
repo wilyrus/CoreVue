@@ -1,21 +1,35 @@
 <template>
   <nav>
-    <v-toolbar dark color="blue" app>
-      <v-toolbar-side-icon dark @click="toggleDrawer" color="white"></v-toolbar-side-icon>
+    <v-toolbar
+      dark
+      color="blue"
+      app
+    >
+      <v-btn
+        @click="toggleDrawer"
+        icon
+        flat
+      >
+        <v-icon>menu</v-icon>
+      </v-btn>
       <v-spacer></v-spacer>
       <v-toolbar-title>{{navigationTitle}}</v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn flat icon>
+      <v-btn
+        flat
+        icon
+      >
         <v-icon>search</v-icon>
       </v-btn>
     </v-toolbar>
 
-    <v-navigation-drawer app v-model="drawer"></v-navigation-drawer>
+    <navigation-drawer :drawer="drawer" />
   </nav>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
+import NavigationDrawer from './NavigationDrawer.vue';
 
 type titles = {
     [key: string]: string;
@@ -34,10 +48,12 @@ const routingTitles: titles = {
 export default Vue.extend({
     data() {
         return {
-            show: false,
             showBackButton: false,
-            drawer: false
+            drawer: true
         };
+    },
+    components: {
+        NavigationDrawer
     },
     computed: {
         navigationTitle(): string {
@@ -45,28 +61,8 @@ export default Vue.extend({
         }
     },
     methods: {
-        navigateBack() {
-            this.$router.go(-1);
-        },
-        updateNavigation() {
-            if (this.$route.name === 'login' || this.$route.name === 'default' || this.$route.name === 'home') {
-                this.show = false;
-            } else {
-                this.show = true;
-            }
-            this.showBackButton = true;
-            this.navigationTitle = routingTitles[this.$route.name || ''] || '';
-        },
         toggleDrawer() {
             this.drawer = !this.drawer;
-        }
-    },
-    created() {
-        this.updateNavigation();
-    },
-    watch: {
-        $route(to, from) {
-            this.updateNavigation();
         }
     }
 });

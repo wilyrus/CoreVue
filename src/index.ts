@@ -2,7 +2,6 @@ import Vue from 'vue';
 import ApplicationRouter from './ApplicationRouter';
 import ApplicationStore from './ApplicationStore';
 import NavigationToolbar from './components/navigation/NavigationToolbar.vue';
-import BottomNavigation from './components/bottomNavigation/BottomNavigation.vue';
 
 import Vuetify from 'vuetify';
 import 'vuetify/dist/vuetify.min.css';
@@ -28,13 +27,11 @@ export default new Vue({
   <router-view></router-view>
   </transition>
   </v-content>
-  <BottomNavigation/>
 </v-app>
   `,
     store: ApplicationStore,
     router: ApplicationRouter,
     components: {
-        NavigationToolbar,
-        BottomNavigation
+        NavigationToolbar
     }
 });
