@@ -21,7 +21,8 @@ type MoveContext = {
 
 export type KanbanProject = {
     name: string,
-    description: string,
+    description?: string,
+    icon?: string,
     date?: Date,
     id: string,
     columns: ProjectsColumns
@@ -50,6 +51,7 @@ const store: ProjectsStore = {
                 name: 'Разработка списка',
                 description: 'Созвониться с А.А. по поводу требований к продукту',
                 id: 'project.1',
+                icon: 'calendar_today',
                 columns: [
                     {
                         id: 'column.1',
@@ -109,6 +111,7 @@ const store: ProjectsStore = {
             },
             {
                 name: 'Разработка канбана',
+                icon: 'table_chart',
                 description: 'Встреча с представителями компании С по поводу нового договора',
                 id: 'project.2',
                 columns: [

@@ -8,16 +8,23 @@
         avatar
       >
         <v-list-tile-avatar>
-          <img :src="project.avatar">
+          <v-icon>{{project.icon}}</v-icon>
         </v-list-tile-avatar>
 
         <v-list-tile-content>
           <v-list-tile-title v-html="project.name"></v-list-tile-title>
-          <v-list-tile-sub-title v-html="project.subtitle"></v-list-tile-sub-title>
+          <v-list-tile-sub-title v-html="project.description"></v-list-tile-sub-title>
         </v-list-tile-content>
       </v-list-tile>
     </v-list>
-    <v-btn color="blue" dark fab fixed bottom right>
+    <v-btn
+      color="blue"
+      dark
+      fab
+      fixed
+      bottom
+      right
+    >
       <v-icon>add</v-icon>
     </v-btn>
   </div>
@@ -32,7 +39,9 @@ export default Vue.extend({
             return this.$store.state.KanbanStore.projects;
         }
     },
-
+    mounted() {
+        this.$store.commit('updateNavigationTitle', 'Projects');
+    },
     methods: {
         navigateToBoard(item: any): any {
             this.$router.push(`/kanbanBoards/${item.id}`);

@@ -56,6 +56,7 @@ import CardsState from './KanbanStore';
 import { TweenLite } from 'gsap';
 
 export default Vue.extend({
+    props: ['column', 'projectId'],
     data() {
         return {
             presentationDelay: 4,
@@ -63,12 +64,16 @@ export default Vue.extend({
             title: this.column.title,
             items: [
                 {
-                    title: 'add'
+                    id: 'edit',
+                    title: 'Edit'
+                },
+                {
+                    id: 'remove',
+                    title: 'Remove'
                 }
             ]
         };
     },
-    props: ['column', 'projectId'],
     methods: {
         addCard() {
             this.$router.push({ name: 'KanbanCardCreation', params: { projectId: this.projectId, columnId: this.column.id } });

@@ -24,6 +24,7 @@
           <v-list-tile
             v-for="(item, i) in items"
             :key="i"
+            @click="handleMenuAction(item)"
           >
             <v-list-tile-title>{{ item.title }}</v-list-tile-title>
           </v-list-tile>
@@ -65,16 +66,24 @@
 import Vue from 'vue';
 
 export default Vue.extend({
+    props: ['card'],
     data() {
         return {
             items: [
                 {
-                    title: 'add'
+                    id: 'edit',
+                    title: 'Edit'
+                },
+                {
+                    id: 'remove',
+                    title: 'Remove'
                 }
             ]
         };
     },
-    props: ['card']
+    methods: {
+        handleMenuAction(menuItem: any) {}
+    }
 });
 </script>
 

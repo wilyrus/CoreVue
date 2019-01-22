@@ -46,9 +46,6 @@ export default Vue.extend({
         project(): any {
             return this.$store.state.KanbanStore.projects.find((project: KanbanProject) => project.id === this.$route.params.projectId);
         },
-        projectName(): void {
-            this.$store.commit('updateNavigationTitle', this.project.name);
-        },
         columns: {
             get(): any {
                 return this.project.columns;
@@ -64,6 +61,7 @@ export default Vue.extend({
     methods: {
         beforeEnter(el: HTMLElement) {
             el.style.left = '50%';
+            this.$store.commit('updateNavigationTitle', this.project.name);
         },
         enter(el: HTMLElement, done: Function) {
             const delay = this.presentationDelay++ * 50;
