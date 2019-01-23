@@ -1,9 +1,6 @@
 
 <template>
-  <v-card
-    class="column-adder"
-    @click='addNewColumn'
-  >
+  <v-card class="column-adder" @click="addNewColumn">
     <v-card-title>
       <span class="title font-weight-light">Add new column</span>
     </v-card-title>
@@ -29,5 +26,6 @@ export default Vue.extend({
     height: 52px;
     margin: 0 15px 15px 15px;
     cursor: pointer;
+    min-width: 190px; /*magic*/
 }
 </style>

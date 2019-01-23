@@ -8,7 +8,7 @@
   >
     <draggable
       v-model="columns"
-      key="someKey"
+      key="columnDragger"
       @change="onChange"
       :options="{group:'columns'}"
       class="board_container"
@@ -22,10 +22,7 @@
         ></kanban-card-container>
       </template>
     </draggable>
-    <kanban-card-container-new
-      :projectId="project.id"
-      key="columnAdder"
-    ></kanban-card-container-new>
+    <kanban-card-container-new :projectId="project.id" key="columnAdder"></kanban-card-container-new>
   </transition-group>
 </template>
 

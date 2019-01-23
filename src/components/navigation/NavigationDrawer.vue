@@ -1,12 +1,6 @@
 <template>
-  <v-navigation-drawer
-    app
-    v-model="drawer"
-  >
-    <v-toolbar
-      flat
-      class="transparent"
-    >
+  <v-navigation-drawer app v-model="isDrawerOpen">
+    <v-toolbar flat class="transparent">
       <v-list class="pa-0">
         <v-list-tile avatar>
           <v-list-tile-avatar>
@@ -20,17 +14,10 @@
       </v-list>
     </v-toolbar>
 
-    <v-list
-      class="pt-0"
-      dense
-    >
+    <v-list class="pt-0" dense>
       <v-divider></v-divider>
 
-      <v-list-tile
-        v-for="item in navigationItems"
-        :key="item.id"
-        @click='navigateTo(item.id)'
-      >
+      <v-list-tile v-for="item in navigationItems" :key="item.id" @click="navigateTo(item.id)">
         <v-list-tile-action>
           <v-icon>{{ item.icon }}</v-icon>
         </v-list-tile-action>
@@ -81,8 +68,16 @@ export default Vue.extend({
                     icon: 'table_chart'
                 }
             ],
-            selectedModule: ''
+            selectedModule: '',
+            isDrawerOpen: this.drawer
         };
+    },
+    watch: {
+        drawer: {
+            handler(val, oldVal) {
+                this.isDrawerOpen = !this.isDrawerOpen;
+            }
+        }
     },
     methods: {
         navigateTo(newModule: any) {
@@ -108,7 +103,7 @@ export default Vue.extend({
 
         navigateToModule(moduleId: string) {
             this.$router.push({ name: this.selectedModule });
-            //this.drawerState = false;
+            this.isDrawerOpen = false;
         }
     }
 });
