@@ -17,14 +17,7 @@
         </v-list-tile-content>
       </v-list-tile>
     </v-list>
-    <v-btn
-      color="blue"
-      dark
-      fab
-      fixed
-      bottom
-      right
-    >
+    <v-btn color="blue" dark fab fixed bottom right @click="navigateToProductCreation">
       <v-icon>add</v-icon>
     </v-btn>
   </div>
@@ -45,6 +38,9 @@ export default Vue.extend({
     methods: {
         navigateToBoard(item: any): any {
             this.$router.push(`/kanbanBoards/${item.id}`);
+        },
+        navigateToProductCreation() {
+            this.$router.push(`/kanbanBoards/new`);
         }
     }
 });

@@ -182,6 +182,17 @@ const store: ProjectsStore = {
                     column.cards.push({ title: draggableContext.name, id: `card${column.cards.length + 1}`, description: draggableContext.description });
                 }
             }
+        },
+        addNewProduct(state: ProjectsState, draggableContext: NewCardContext) {
+            const project = state.projects.find(pr => pr.id === draggableContext.projectId);
+
+            if (project) {
+                const column = project.columns.find(cl => cl.id === draggableContext.columnId);
+
+                if (column) {
+                    column.cards.push({ title: draggableContext.name, id: `card${column.cards.length + 1}`, description: draggableContext.description });
+                }
+            }
         }
     }
 };
