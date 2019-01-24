@@ -1,8 +1,5 @@
 <template>
   <v-card>
-    <v-card-title>
-      <span class="headline">Create new project</span>
-    </v-card-title>
     <v-card-text>
       <v-container grid-list-md>
         <v-layout wrap>
@@ -34,7 +31,7 @@ export default Vue.extend({
         };
     },
     created() {
-        this.$store.commit('updateNavigationTitle', 'Новая карточка для ');
+        this.$store.commit('updateNavigationTitle', 'New project');
     },
     methods: {
         addNewProject(event: any) {
@@ -42,7 +39,7 @@ export default Vue.extend({
                 name: this.name,
                 description: this.description
             });
-            this.$router.push(`/kanbanBoards/${this.$route.params.projectId}`);
+            this.$router.push(`/kanbanBoards/`);
         },
         close() {
             this.$router.push('/kanbanBoards');

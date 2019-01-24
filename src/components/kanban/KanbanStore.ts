@@ -7,7 +7,8 @@ type KanbanCard = {
 type ColumnType = {
     id: string,
     title: string,
-    cards: Array<KanbanCard>
+    cards: Array<KanbanCard>,
+    description?: string
 };
 
 type ProjectsColumns = Array<ColumnType>;
@@ -183,16 +184,26 @@ const store: ProjectsStore = {
                 }
             }
         },
-        addNewProduct(state: ProjectsState, draggableContext: NewCardContext) {
+        addNewColumn(state: ProjectsState, draggableContext: NewCardContext) {
             const project = state.projects.find(pr => pr.id === draggableContext.projectId);
 
             if (project) {
-                const column = project.columns.find(cl => cl.id === draggableContext.columnId);
-
-                if (column) {
-                    column.cards.push({ title: draggableContext.name, id: `card${column.cards.length + 1}`, description: draggableContext.description });
-                }
+                project.columns.push({
+                    title: draggableContext.name,
+                    id: `card${project.columns.length + 1}`,
+                    description: draggableContext.description,
+                    cards: []
+                });
             }
+        },
+        addNewProject(state: ProjectsState, draggableContext: NewCardContext) {
+            state.projects.push({
+                name: draggableContext.name,
+                icon: 'table_chart',
+                description: draggableContext.description,
+                id: `project.${state.projects}`,
+                columns: []
+            });
         }
     }
 };
