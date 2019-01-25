@@ -3,24 +3,46 @@
     <v-card-title :key="title">
       <span class="title font-weight-light">{{title}}</span>
       <v-spacer></v-spacer>
-      <v-btn flat icon small @click="addCard">
+      <v-btn
+        flat
+        icon
+        small
+        @click="addCard"
+      >
         <v-icon>add</v-icon>
       </v-btn>
       <v-menu>
-        <v-btn slot="activator" icon flat small>
+        <v-btn
+          slot="activator"
+          icon
+          flat
+          small
+        >
           <v-icon>more_vert</v-icon>
         </v-btn>
 
         <v-list>
-          <v-list-tile v-for="(item, i) in items" :key="i">
+          <v-list-tile
+            v-for="(item, i) in items"
+            :key="i"
+            @click="handleMenuAction(item)"
+          >
             <v-list-tile-title>{{ item.title }}</v-list-tile-title>
           </v-list-tile>
         </v-list>
       </v-menu>
     </v-card-title>
-    <draggable v-model="cards" @change="onChange" :options="{group:'cards'}" class="column-wrp">
+    <draggable
+      v-model="cards"
+      @change="onChange"
+      :options="{group:'cards', delay:'150'}"
+      class="column-wrp"
+    >
       <template v-for="card in cards">
-        <card-item :key="card.title" :card="card"></card-item>
+        <card-item
+          :key="card.title"
+          :card="card"
+        ></card-item>
       </template>
     </draggable>
   </v-card>
@@ -64,7 +86,8 @@ export default Vue.extend({
                     projectId: this.projectId
                 })
             );
-        }
+        },
+        handleMenuAction() {}
     },
     components: {
         CardItem,

@@ -40,10 +40,10 @@ export default Vue.extend({
                 description: this.description,
                 projectId: this.$route.params.projectId
             });
-            this.$router.push('/kanbanBoards');
+            this.$router.push(`/kanbanBoards/${this.$route.params.projectId}`);
         },
         close() {
-            this.$router.push('/kanbanBoards');
+            this.$router.push(`/kanbanBoards/${this.$route.params.projectId}`);
         }
     }
 });

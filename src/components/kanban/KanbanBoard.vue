@@ -10,7 +10,7 @@
       v-model="columns"
       key="columnDragger"
       @change="onChange"
-      :options="{group:'columns'}"
+      :options="{group:'columns', delay:'150'}"
       class="board_container"
     >
       <template v-for="column in columns">
@@ -22,7 +22,10 @@
         ></kanban-card-container>
       </template>
     </draggable>
-    <kanban-card-container-new :projectId="project.id" key="columnAdder"></kanban-card-container-new>
+    <kanban-card-container-new
+      :projectId="project.id"
+      key="columnAdder"
+    ></kanban-card-container-new>
   </transition-group>
 </template>
 
