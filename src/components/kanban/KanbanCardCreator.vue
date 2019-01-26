@@ -21,6 +21,53 @@
               required
             ></v-text-field>
           </v-flex>
+          <v-flex xs12>
+            <v-menu
+              ref="menu"
+              :close-on-content-click="false"
+              v-model="menu"
+              :nudge-right="40"
+              :return-value.sync="date"
+              lazy
+              transition="scale-transition"
+              offset-y
+              full-width
+              min-width="290px"
+            >
+              <v-text-field
+                slot="activator"
+                v-model="date"
+                label="Release date"
+                readonly
+              ></v-text-field>
+              <v-date-picker
+                v-model="date"
+                no-title
+                scrollable
+              >
+                <v-spacer></v-spacer>
+                <v-btn
+                  flat
+                  color="primary"
+                  @click="menu = false"
+                >Cancel</v-btn>
+                <v-btn
+                  flat
+                  color="primary"
+                  @click="$refs.menu.save(date)"
+                >OK</v-btn>
+              </v-date-picker>
+            </v-menu>
+
+            <v-flex xs12>
+              <v-combobox
+                v-model="select"
+                :items="items"
+                label="Assigne"
+              ></v-combobox>
+            </v-flex>
+
+          </v-flex>
         </v-layout>
       </v-container>
     </v-card-text>
@@ -47,7 +94,9 @@ export default Vue.extend({
     data() {
         return {
             name: undefined,
-            description: undefined
+            description: undefined,
+            date: undefined,
+            menu: false
         };
     },
     created() {

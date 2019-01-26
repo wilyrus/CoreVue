@@ -1,7 +1,16 @@
 <template>
-  <div class="card-container profile-card" v-on:click="navigatieToProfilePage">
-    <v-avatar :size="80" color="grey lighten-4">
-      <img src="../../assets/avatar.jpg" alt="avatar">
+  <div
+    class="card-container profile-card"
+    v-on:click="navigatieToProfilePage"
+  >
+    <v-avatar
+      :size="80"
+      color="grey lighten-4"
+    >
+      <img
+        src="../../assets/avatar.jpg"
+        alt="avatar"
+      >
     </v-avatar>
     <div class="profile-card__data">
       <span class="profile-card__last-name">{{profileCard.subname}}</span>

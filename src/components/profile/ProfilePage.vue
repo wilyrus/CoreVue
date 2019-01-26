@@ -1,15 +1,48 @@
 <template>
   <div class="profile-page">
-    <v-avatar :tile="tile" :size="120" color="grey lighten-4">
-      <img src="../../assets/avatar.jpg" alt="avatar">
-    </v-avatar>
-    <v-form class="profile-form" ref="form" v-model="valid" lazy-validation>
-      <v-text-field v-model="name" label="Имя" readonly="true"></v-text-field>
-      <v-text-field v-model="sername" label="Фамилия" readonly="true"></v-text-field>
-      <v-text-field v-model="fathersName" label="Отчество" readonly="true"></v-text-field>
-      <v-text-field v-model="email" label="E-mail" readonly="true"></v-text-field>
-    </v-form>
-    <v-btn v-on:click="logout" color="info">Выйти</v-btn>
+    <v-card class="profile_card">
+      <v-avatar
+        :tile="tile"
+        :size="120"
+        color="grey lighten-4"
+      >
+        <img
+          :src=profileCard.url
+          alt="avatar"
+        >
+      </v-avatar>
+      <v-form
+        class="profile-form"
+        ref="form"
+        v-model="valid"
+        lazy-validation
+      >
+        <v-text-field
+          v-model="name"
+          label="Имя"
+          readonly="true"
+        ></v-text-field>
+        <v-text-field
+          v-model="sername"
+          label="Фамилия"
+          readonly="true"
+        ></v-text-field>
+        <v-text-field
+          v-model="fathersName"
+          label="Отчество"
+          readonly="true"
+        ></v-text-field>
+        <v-text-field
+          v-model="email"
+          label="E-mail"
+          readonly="true"
+        ></v-text-field>
+      </v-form>
+      <v-btn
+        v-on:click="logout"
+        color="info"
+      >Выйти</v-btn>
+    </v-card>
   </div>
 </template>
 
@@ -34,6 +67,9 @@ export default Vue.extend({
         logout() {
             this.$router.push('login');
         }
+    },
+    mounted() {
+        this.$store.commit('updateNavigationTitle', 'Profile');
     }
 });
 </script>
@@ -44,8 +80,15 @@ export default Vue.extend({
     flex-direction: column;
     align-items: center;
 }
+.profile_card {
+    min-width: 300px;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+}
 .profile-form {
     width: 100%;
-    padding: 10px;
+    padding: 15px;
 }
 </style>

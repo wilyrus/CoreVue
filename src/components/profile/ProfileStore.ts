@@ -1,7 +1,8 @@
 type ProfileState = {
     name: string,
     subname: string,
-    description: string
+    description: string,
+    url: string
 };
 
 type ProfileStore = {
@@ -12,7 +13,8 @@ const store: ProfileStore = {
     state: {
         name: 'Марина Викторовна',
         subname: 'Одинцова',
-        description: 'Ведущий специалист пресс-службы'
+        description: 'Ведущий специалист пресс-службы',
+        url: '../../assets/avatar.jpg'
     }
 };
 
