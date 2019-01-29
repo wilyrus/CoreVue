@@ -35,7 +35,7 @@
     <draggable
       v-model="cards"
       @change="onChange"
-      :options="{group:'cards', delay:'150'}"
+      :options="{group:'cards'}"
       class="column-wrp"
     >
       <template v-for="card in cards">

@@ -1,5 +1,5 @@
 <template>
-  <div class="some-body">
+  <div>
     <v-list three-line>
       <v-list-tile
         @click="navigateToBoard(project)"
@@ -17,7 +17,15 @@
         </v-list-tile-content>
       </v-list-tile>
     </v-list>
-    <v-btn color="blue" dark fab fixed bottom right @click="navigateToProductCreation">
+    <v-btn
+      color="blue"
+      dark
+      fab
+      fixed
+      bottom
+      right
+      @click="navigateToProductCreation"
+    >
       <v-icon>add</v-icon>
     </v-btn>
   </div>

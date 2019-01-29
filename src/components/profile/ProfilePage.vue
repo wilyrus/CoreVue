@@ -2,7 +2,6 @@
   <div class="profile-page">
     <v-card class="profile_card">
       <v-avatar
-        :tile="tile"
         :size="120"
         color="grey lighten-4"
       >
@@ -14,34 +13,36 @@
       <v-form
         class="profile-form"
         ref="form"
-        v-model="valid"
-        lazy-validation
       >
         <v-text-field
-          v-model="name"
-          label="Имя"
-          readonly="true"
+          :value="profileCard.name"
+          label="Name"
+          required
+          :rules="notEmptyRule"
         ></v-text-field>
         <v-text-field
-          v-model="sername"
-          label="Фамилия"
-          readonly="true"
+          :value="profileCard.sername"
+          label="Sername"
+          required
+          :rules="notEmptyRule"
         ></v-text-field>
         <v-text-field
-          v-model="fathersName"
-          label="Отчество"
-          readonly="true"
+          :value="profileCard.fathersName"
+          label="Father's name"
+          required
+          :rules="notEmptyRule"
         ></v-text-field>
         <v-text-field
-          v-model="email"
+          :value="profileCard.email"
           label="E-mail"
-          readonly="true"
+          required
+          :rules="notEmptyRule"
         ></v-text-field>
       </v-form>
       <v-btn
-        v-on:click="logout"
-        color="info"
-      >Выйти</v-btn>
+        v-on:click="save"
+        color="Blue"
+      >Save</v-btn>
     </v-card>
   </div>
 </template>
@@ -50,22 +51,21 @@
 import Vue from 'vue';
 
 export default Vue.extend({
-    data() {
-        return {
-            name: 'Роберт',
-            sername: 'Паттисон',
-            fathersName: 'Михайлович',
-            email: 'pattison@gmail.com'
-        };
-    },
+    data: () => ({
+        notEmptyRule: [(v: any) => !!v || 'Field is required']
+    }),
     computed: {
         profileCard(): any {
             return this.$store.state.ProfileStore;
         }
     },
     methods: {
-        logout() {
-            this.$router.push('login');
+        async save() {
+            // @ts-ignore
+            if (this.$refs.form.validate()) {
+                await this.$store.commit('saveProfile', 'Profile');
+                this.$router.push('login');
+            }
         }
     },
     mounted() {

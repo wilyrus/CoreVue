@@ -6,7 +6,10 @@ type ProfileState = {
 };
 
 type ProfileStore = {
-    state: ProfileState
+    state: ProfileState,
+    mutations: {
+        editProfile: (state: ProfileState, data: ProfileState) => void
+    }
 };
 
 const store: ProfileStore = {
@@ -15,6 +18,11 @@ const store: ProfileStore = {
         subname: 'Одинцова',
         description: 'Ведущий специалист пресс-службы',
         url: '../../assets/avatar.jpg'
+    },
+    mutations: {
+        editProfile(state: ProfileState, data: ProfileState) {
+            console.log(state, data);
+        }
     }
 };
 

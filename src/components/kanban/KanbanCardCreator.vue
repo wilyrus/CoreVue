@@ -38,7 +38,6 @@
                 slot="activator"
                 v-model="date"
                 label="Release date"
-                readonly
               ></v-text-field>
               <v-date-picker
                 v-model="date"
