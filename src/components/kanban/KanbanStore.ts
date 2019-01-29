@@ -196,6 +196,13 @@ const store: ProjectsStore = {
                 });
             }
         },
+        removedColumn(state: ProjectsState, draggableContext: MoveContext) {
+            const project = state.projects.find(pr => pr.id === draggableContext.projectId);
+
+            if (project) {
+                project.columns.splice(draggableContext.index, 1);
+            }
+        },
         addNewProject(state: ProjectsState, draggableContext: NewCardContext) {
             state.projects.push({
                 name: draggableContext.name,

@@ -25,7 +25,7 @@
           <v-list-tile
             v-for="(item, i) in items"
             :key="i"
-            @click="handleMenuAction(item)"
+            @click="handleMenuAction(item.id)"
           >
             <v-list-tile-title>{{ item.title }}</v-list-tile-title>
           </v-list-tile>
@@ -63,10 +63,6 @@ export default Vue.extend({
             title: this.column.title,
             items: [
                 {
-                    id: 'edit',
-                    title: 'Edit'
-                },
-                {
                     id: 'remove',
                     title: 'Remove'
                 }
@@ -87,7 +83,13 @@ export default Vue.extend({
                 })
             );
         },
-        handleMenuAction() {}
+        handleMenuAction(actionId: string) {
+            switch (actionId) {
+                case 'remove': {
+                    this.$store.commit('removeColumn', { columnId: this.column.id });
+                }
+            }
+        }
     },
     components: {
         CardItem,
