@@ -1,0 +1,21 @@
+{
+    "name": "CoreVue",
+    "short_name": "CoreVue",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#fff",
+    "url": "https://wilerus.github.io/CoreVue/dist/index.html#/",
+    "description": "The most of Vue",
+    "icons": [
+        {
+        "src": "/assets/logo.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "/assets/logo.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ]
+  }

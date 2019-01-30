@@ -131,6 +131,14 @@ module.exports = {
             {
                 from: path.resolve(__dirname, 'src/index.html'),
                 to: path.resolve(__dirname, 'dist/index.html')
+            },
+            {
+                from: path.resolve(__dirname, 'src/sw.js'),
+                to: path.resolve(__dirname, 'dist/sw.js')
+            },
+            {
+                from: path.resolve(__dirname, 'src/manifest.webmanifest'),
+                to: path.resolve(__dirname, 'dist/manifest.webmanifest')
             }
         ])
     ],

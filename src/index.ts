@@ -8,6 +8,19 @@ import 'vuetify/dist/vuetify.min.css';
 import './assets/main.css';
 import 'material-design-icons-iconfont/dist/material-design-icons.css';
 
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker
+        .register('/sw.js', { scope: '../dist/' })
+        .then(function(reg) {
+            // регистрация сработала
+            console.log('Registration succeeded. Scope is ' + reg.scope);
+        })
+        .catch(function(error) {
+            // регистрация прошла неудачно
+            console.log('Registration failed with ' + error);
+        });
+}
+
 Vue.use(Vuetify, {
     iconfont: 'mdi'
 });
