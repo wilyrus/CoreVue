@@ -1,0 +1,31 @@
+{
+    "name": "CoreVue",
+    "short_name": "CoreVue",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#fff",
+    "url": "https://wilerus.github.io/CoreVue/dist/index.html#/",
+    "description": "The most of Vue",
+    "icons": [
+        {
+        "src": "/assets/Icon-96.png",
+        "type": "image/png",
+        "sizes": "96x96"
+      },
+      {
+        "src": "/assets/Icon-144.png",
+        "type": "image/png",
+        "sizes": "144x144"
+      },
+      {
+        "src": "/assets/Icon-192.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "/assets/Icon-512.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ]
+  }
