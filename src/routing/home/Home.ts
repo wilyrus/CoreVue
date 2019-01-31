@@ -1,4 +1,4 @@
-import HomeModule from '../../modules/home/HomeModule.vue';
+const HomeModule = () => import('../../modules/home/HomeModule.vue');
 
 const homeRoutes = [{ name: 'home', path: '/home', component: HomeModule }];
 

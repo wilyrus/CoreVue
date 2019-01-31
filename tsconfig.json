@@ -5,7 +5,7 @@
     "strict": true,
     "sourceMap": true,
     "noImplicitReturns": true,
-    "module": "es2015",
+    "module": "esnext",
     "moduleResolution": "node"
   },
   "include": ["./src/**/*", "./typings/**/*"]

@@ -1,18 +1,23 @@
-this.addEventListener('install', function(event) {
+this.addEventListener('install', event => {
     event.waitUntil(
-        caches.open('v1').then(function(cache) {
-            return cache.addAll([
-                '/sw-test/',
-                '/sw-test/index.html',
-                '/sw-test/style.css',
-                '/sw-test/app.js',
-                '/sw-test/image-list.js',
-                '/sw-test/star-wars-logo.jpg',
-                '/sw-test/gallery/',
-                '/sw-test/gallery/bountyHunters.jpg',
-                '/sw-test/gallery/myLittleVader.jpg',
-                '/sw-test/gallery/snowTroopers.jpg'
-            ]);
+        caches.open('v1').then(cache => {
+            return cache.addAll(['bundle.js']);
+        })
+    );
+});
+
+this.addEventListener('fetch', event => {
+    event.respondWith(
+        caches.match(event.request).then(response => {
+            return (
+                response ||
+                fetch(event.request).then(async response => {
+                    const cache = await caches.open('v1');
+
+                    cache.put(event.request, response.clone());
+                    return response;
+                })
+            );
         })
     );
 });

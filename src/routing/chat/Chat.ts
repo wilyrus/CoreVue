@@ -1,4 +1,4 @@
-import Chat from '../../modules/chat/Chat.vue';
+const Chat = () => import('../../modules/chat/Chat.vue');
 
 const chatRoutes = [{ name: 'chat', path: '/chat', component: Chat }];
 

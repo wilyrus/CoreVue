@@ -1,4 +1,4 @@
-import Dashboard from '../../modules/dashboard/Dashboard.vue';
+const Dashboard = () => import('../../modules/dashboard/Dashboard.vue');
 
 const dashboardRoutes = [{ name: 'dashboard', path: '/dashboard', component: Dashboard }];
 

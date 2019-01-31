@@ -12,6 +12,7 @@ import KanbanRoutes from './components/kanban/KanbanRoutes';
 Vue.use(VueRouter);
 
 const applicationRouter = new VueRouter({
+    // @ts-ignore
     routes: LoginRout.concat(HomeRout, Timeline, Profile, Chat, Dashboard, CardList, KanbanRoutes)
 });
 

@@ -1,4 +1,4 @@
-import Profile from '../../modules/Profile/Profile.vue';
+const Profile = () => import('../../modules/Profile/Profile.vue');
 
 const timelineRoutes = [{ name: 'profile', path: '/profile', component: Profile }];
 
