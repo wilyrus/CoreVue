@@ -1,6 +1,6 @@
 {
   "name": "corevue",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "just another application",
   "main": "index.js",
   "scripts": {

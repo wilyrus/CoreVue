@@ -50555,37 +50555,37 @@ if (inBrowser && window.Vue) {
 /* harmony default export */ var vue_router_esm = (VueRouter);
 
 // CONCATENATED MODULE: ./src/routing/login/LoginPage.ts
-const LoginForm = () => __webpack_require__.e(/*! import() */ "src_modules_login_LoginForm_vue").then(__webpack_require__.bind(null, /*! ../../modules/login/LoginForm.vue */ "./src/modules/login/LoginForm.vue"));
+const LoginForm = () => __webpack_require__.e(/*! import() */ "src_modules_login_LoginForm_vue").then(__webpack_require__.bind(null, /*! ../../modules/login/LoginForm.vue */ "./src/modules/login/LoginForm.vue")).then(m => m.default);
 const loginRoutes = [{ name: 'login', path: '/login', component: LoginForm }, { name: 'default', path: '/', component: LoginForm }];
 /* harmony default export */ var LoginPage = (loginRoutes);
 
 // CONCATENATED MODULE: ./src/routing/home/Home.ts
-const HomeModule = () => Promise.all(/*! import() */[__webpack_require__.e("vendors-node_modules_chart_js_src_chart_js-node_modules_moment_locale_af_js-node_modules_mome-7acb81"), __webpack_require__.e("node_modules_moment_locale_sync_recursive_-src_modules_home_HomeModule_vue")]).then(__webpack_require__.bind(null, /*! ../../modules/home/HomeModule.vue */ "./src/modules/home/HomeModule.vue"));
+const HomeModule = () => Promise.all(/*! import() */[__webpack_require__.e("vendors-node_modules_chart_js_src_chart_js-node_modules_moment_locale_af_js-node_modules_mome-7acb81"), __webpack_require__.e("node_modules_moment_locale_sync_recursive_-src_modules_home_HomeModule_vue")]).then(__webpack_require__.bind(null, /*! ../../modules/home/HomeModule.vue */ "./src/modules/home/HomeModule.vue")).then(m => m.default);
 const homeRoutes = [{ name: 'home', path: '/home', component: HomeModule }];
 /* harmony default export */ var Home = (homeRoutes);
 
 // CONCATENATED MODULE: ./src/routing/timeline/Timeline.ts
-const ActivityTimeline = () => __webpack_require__.e(/*! import() */ "src_modules_timeline_ActivityTimeline_vue").then(__webpack_require__.bind(null, /*! ../../modules/timeline/ActivityTimeline.vue */ "./src/modules/timeline/ActivityTimeline.vue"));
+const ActivityTimeline = () => __webpack_require__.e(/*! import() */ "src_modules_timeline_ActivityTimeline_vue").then(__webpack_require__.bind(null, /*! ../../modules/timeline/ActivityTimeline.vue */ "./src/modules/timeline/ActivityTimeline.vue")).then(m => m.default);
 const timelineRoutes = [{ name: 'timeline', path: '/timeline', component: ActivityTimeline }];
 /* harmony default export */ var Timeline = (timelineRoutes);
 
 // CONCATENATED MODULE: ./src/routing/profile/Profile.ts
-const Profile = () => __webpack_require__.e(/*! import() */ "src_modules_Profile_Profile_vue").then(__webpack_require__.bind(null, /*! ../../modules/Profile/Profile.vue */ "./src/modules/Profile/Profile.vue"));
+const Profile = () => __webpack_require__.e(/*! import() */ "src_modules_Profile_Profile_vue").then(__webpack_require__.bind(null, /*! ../../modules/Profile/Profile.vue */ "./src/modules/Profile/Profile.vue")).then(m => m.default);
 const Profile_timelineRoutes = [{ name: 'profile', path: '/profile', component: Profile }];
 /* harmony default export */ var profile_Profile = (Profile_timelineRoutes);
 
 // CONCATENATED MODULE: ./src/routing/chat/Chat.ts
-const Chat = () => __webpack_require__.e(/*! import() */ "src_modules_chat_Chat_vue").then(__webpack_require__.bind(null, /*! ../../modules/chat/Chat.vue */ "./src/modules/chat/Chat.vue"));
+const Chat = () => __webpack_require__.e(/*! import() */ "src_modules_chat_Chat_vue").then(__webpack_require__.bind(null, /*! ../../modules/chat/Chat.vue */ "./src/modules/chat/Chat.vue")).then(m => m.default);
 const chatRoutes = [{ name: 'chat', path: '/chat', component: Chat }];
 /* harmony default export */ var chat_Chat = (chatRoutes);
 
 // CONCATENATED MODULE: ./src/routing/dashboard/Dashboard.ts
-const Dashboard = () => Promise.all(/*! import() */[__webpack_require__.e("vendors-node_modules_chart_js_src_chart_js-node_modules_moment_locale_af_js-node_modules_mome-7acb81"), __webpack_require__.e("node_modules_moment_locale_sync_recursive_-src_modules_dashboard_Dashboard_vue")]).then(__webpack_require__.bind(null, /*! ../../modules/dashboard/Dashboard.vue */ "./src/modules/dashboard/Dashboard.vue"));
+const Dashboard = () => Promise.all(/*! import() */[__webpack_require__.e("vendors-node_modules_chart_js_src_chart_js-node_modules_moment_locale_af_js-node_modules_mome-7acb81"), __webpack_require__.e("node_modules_moment_locale_sync_recursive_-src_modules_dashboard_Dashboard_vue")]).then(__webpack_require__.bind(null, /*! ../../modules/dashboard/Dashboard.vue */ "./src/modules/dashboard/Dashboard.vue")).then(m => m.default);
 const dashboardRoutes = [{ name: 'dashboard', path: '/dashboard', component: Dashboard }];
 /* harmony default export */ var dashboard_Dashboard = (dashboardRoutes);
 
 // CONCATENATED MODULE: ./src/routing/cardList/CardList.ts
-const CardList = () => __webpack_require__.e(/*! import() */ "src_modules_cardList_CardList_vue").then(__webpack_require__.bind(null, /*! ../../modules/cardList/CardList.vue */ "./src/modules/cardList/CardList.vue"));
+const CardList = () => __webpack_require__.e(/*! import() */ "src_modules_cardList_CardList_vue").then(__webpack_require__.bind(null, /*! ../../modules/cardList/CardList.vue */ "./src/modules/cardList/CardList.vue")).then(m => m.default);
 const cardListRoutes = [{ name: 'CardList', path: '/CardList', component: CardList }];
 /* harmony default export */ var cardList_CardList = (cardListRoutes);
 
