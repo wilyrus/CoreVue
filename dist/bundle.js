@@ -47917,7 +47917,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ "./src/index.ts":
 /*!***********************************!*\
-  !*** ./src/index.ts + 71 modules ***!
+  !*** ./src/index.ts + 72 modules ***!
   \***********************************/
 /*! exports provided: default */
 /*! runtime requirements: __webpack_exports____webpack_require__.r, __webpack_require__.d, __webpack_require__.t, __webpack_require__.n, __webpack_require__.e, __webpack_require__,  */
@@ -53649,6 +53649,53 @@ var main = __webpack_require__("./src/assets/main.css");
 // EXTERNAL MODULE: ./node_modules/material-design-icons-iconfont/dist/material-design-icons.css
 var material_design_icons = __webpack_require__("./node_modules/material-design-icons-iconfont/dist/material-design-icons.css");
 
+// CONCATENATED MODULE: ./src/services/ServiceWorkerService.ts
+var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+const registerServiceWorker = function () {
+    return __awaiter(this, void 0, void 0, function* () {
+        if ('serviceWorker' in navigator) {
+            let refreshing = false;
+            try {
+                const reg = yield navigator.serviceWorker.register('/sw.js', { scope: '../dist/' });
+                reg.addEventListener('updatefound', () => {
+                    const newWorker = reg.installing;
+                    if (newWorker) {
+                        newWorker.addEventListener('statechange', () => {
+                            switch (newWorker.state) {
+                                case 'installed':
+                                    if (navigator.serviceWorker.controller) {
+                                        let notification = document.getElementById('notification ');
+                                        if (notification) {
+                                            notification.className = 'show';
+                                        }
+                                    }
+                                    break;
+                            }
+                        });
+                    }
+                });
+                navigator.serviceWorker.addEventListener('controllerchange', function () {
+                    if (refreshing)
+                        return;
+                    window.location.reload();
+                    refreshing = true;
+                });
+            }
+            catch (e) {
+                console.log('Registration failed with ' + e);
+            }
+        }
+    });
+};
+/* harmony default export */ var ServiceWorkerService = ({ registerServiceWorker });
+
 // CONCATENATED MODULE: ./src/index.ts
 /* harmony export export */ __webpack_require__.d(__webpack_exports__, "default", function() { return src; });
 
@@ -53659,21 +53706,11 @@ var material_design_icons = __webpack_require__("./node_modules/material-design-
 
 
 
-if ('serviceWorker' in navigator) {
-    navigator.serviceWorker
-        .register('/sw.js', { scope: '../dist/' })
-        .then(function (reg) {
-        // регистрация сработала
-        console.log('Registration succeeded. Scope is ' + reg.scope);
-    })
-        .catch(function (error) {
-        // регистрация прошла неудачно
-        console.log('Registration failed with ' + error);
-    });
-}
+
 vue_default.a.use(vuetify_default.a, {
     iconfont: 'mdi'
 });
+ServiceWorkerService.registerServiceWorker();
 /* harmony default export */ var src = (new vue_default.a({
     data() {
         return {

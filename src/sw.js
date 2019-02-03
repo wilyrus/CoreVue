@@ -21,3 +21,9 @@ this.addEventListener('fetch', event => {
         })
     );
 });
+
+this.addEventListener('message', event => {
+    if (event.data.action === 'skipWaiting') {
+        this.skipWaiting();
+    }
+});
