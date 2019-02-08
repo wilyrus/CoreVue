@@ -24,22 +24,22 @@
     "source-map-loader": "^0.2.4",
     "ts-loader": "^5.3.3",
     "tslint": "^5.12.1",
-    "typescript": "^3.3.1",
+    "typescript": "^3.3.3",
     "url-loader": "^1.1.2",
     "vue-loader": "^15.6.2",
     "vue-style-loader": "^4.1.2",
-    "webpack": "^5.0.0-alpha.9",
-    "webpack-cli": "^3.2.1",
+    "webpack": "^5.0.0-alpha.10",
+    "webpack-cli": "^3.2.3",
     "webpack-dev-server": "^3.1.14"
   },
   "dependencies": {
     "chart.js": "^2.7.3",
     "gsap": "^2.0.2",
-    "vue": "^2.5.22",
+    "vue": "^2.6.3",
     "vue-router": "^3.0.2",
-    "vue-template-compiler": "^2.5.22",
+    "vue-template-compiler": "^2.6.3",
     "vuedraggable": "^2.17.0",
-    "vuetify": "^1.5.0-beta.3",
+    "vuetify": "^1.5.0",
     "vuex": "^3.1.0"
   }
 }
