@@ -10,14 +10,14 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@fortawesome/fontawesome-free": "^5.7.1",
+    "@fortawesome/fontawesome-free": "^5.7.2",
     "@mdi/font": "^3.4.93",
-    "@types/chart.js": "^2.7.43",
+    "@types/chart.js": "^2.7.45",
     "@types/gsap": "^1.20.1",
-    "copy-webpack-plugin": "^4.6.0",
+    "copy-webpack-plugin": "^5.0.0",
     "css-loader": "^2.1.0",
     "file-loader": "^3.0.1",
-    "material-design-icons-iconfont": "^4.0.4",
+    "material-design-icons-iconfont": "^4.0.5",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "prettier": "^1.16.4",
     "raw-loader": "^1.0.0",
@@ -26,20 +26,20 @@
     "tslint": "^5.12.1",
     "typescript": "^3.3.3",
     "url-loader": "^1.1.2",
-    "vue-loader": "^15.6.2",
+    "vue-loader": "^15.6.4",
     "vue-style-loader": "^4.1.2",
-    "webpack": "^5.0.0-alpha.10",
+    "webpack": "^5.0.0-alpha.11",
     "webpack-cli": "^3.2.3",
-    "webpack-dev-server": "^3.1.14"
+    "webpack-dev-server": "^3.2.0"
   },
   "dependencies": {
     "chart.js": "^2.7.3",
-    "gsap": "^2.0.2",
-    "vue": "^2.6.3",
+    "gsap": "^2.1.0",
+    "vue": "^2.6.6",
     "vue-router": "^3.0.2",
-    "vue-template-compiler": "^2.6.3",
+    "vue-template-compiler": "^2.6.6",
     "vuedraggable": "^2.17.0",
-    "vuetify": "^1.5.0",
+    "vuetify": "^1.5.2",
     "vuex": "^3.1.0"
   }
 }
