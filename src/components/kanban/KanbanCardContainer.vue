@@ -99,14 +99,8 @@ export default Vue.extend({
 </script>
 
 <style>
-.cardsContainer {
-    display: flex;
-    flex-direction: column;
-    margin: 15px;
-    padding: 15px;
-    box-shadow: 0 7px 10px rgba(0, 0, 0, 0.08), 0 5px 15px rgba(0, 0, 0, 0.2);
-}
 .column-wrp {
     overflow-y: auto;
+    min-height: 50px;
 }
 </style>

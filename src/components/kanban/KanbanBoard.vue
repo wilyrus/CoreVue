@@ -95,5 +95,6 @@ export default Vue.extend({
     max-height: 100%;
     display: flex !important;
     flex-direction: column;
+  width: 300px;
 }
 </style>
